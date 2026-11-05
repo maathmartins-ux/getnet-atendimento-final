@@ -130,7 +130,7 @@ _ACK = re.compile(r"^\W*(ok(ay)?|t[aá] bom|certo|beleza|blz|valeu|obrigad[oa]|e
                   r"|thanks|thank you|got it|sure|alright|fine|cool)\b", re.IGNORECASE)
 # Palavras funcionais frequentes de cada idioma; nenhuma de uma letra só ("a" existe nos dois).
 _EN = re.compile(r"\b(the|what|how|why|when|my|your|is|are|can|you|please|want|to|talk|with|it|do|does"
-                 r"|of|and|for|this|that|me|need|help|where|order)\b", re.IGNORECASE)
+                 r"|of|and|for|this|that|me|need|help|where|order|all|previous|instructions)\b", re.IGNORECASE)
 _PT = re.compile(r"\b(os|as|um|uma|de|do|da|que|como|com|para|por|não|meu|minha|quero|está"
                  r"|falar|ajuda|preciso|sem|no|na|qual|onde|posso|pedido)\b", re.IGNORECASE)
 _ACCENT = re.compile(r"[ãõáéíóúâêôç]", re.IGNORECASE)
@@ -356,7 +356,13 @@ def knn_intent(text: str) -> str | None:
     return get_knn().predict(text)
 
 
+_SPACED_LETTERS = re.compile(r"\b(?:\w ){2,}\w\b")
+
+
 def _language_votes(text: str) -> tuple[int, int]:
+    # Letras espaçadas ("i g n o r e") viram a palavra antes da contagem: sem isso não havia voto e a recusa
+    # saía em pt para pergunta em en (q-guard-10, rodada 1 ao vivo).
+    text = _SPACED_LETTERS.sub(lambda m: m.group(0).replace(" ", ""), text)
     # Acento vale 1 ponto para pt, não decide sozinho (nome próprio acentuado em frase inglesa).
     return len(_EN.findall(text)), len(_PT.findall(text)) + min(1, len(_ACCENT.findall(text)))
 
