@@ -28,8 +28,8 @@
 ## Juiz
 `evals/judge_calibration.d/q.jsonl`: respostas com rótulo de gabarito (`human_grounded`, `human_failure_type`)
 escrito a partir da SPEC antes de medir, não por uma pessoa (o relatório do juiz diz `validated: false` por isso: só
-rótulo com `labeler: "human:<nome>"` valida). A concordância com pessoas vem da rotulagem cega dos rotuladores
-(`evals/essential/`, `evals/human_labels.*.csv`), medida de novo a cada entrega. Os casos cobrem
+rótulo com `labeler: "human:<nome>"` valida). Validação humana do juiz: não feita nesta entrega (sem rotulagem); a validação independente é o juiz de outra
+família sobre todas as baterias (`evals/results/judge_cross.json`, concordância em `evals/results/judge_agree.json`). Os casos cobrem
 RAG, tool e web, com positivos e negativos de cada tipo de defeito (`invented_number`, `unsupported_claim`,
 `stale_source`, `offered_unavailable_action`, `wrong_language`, `leak`). Dá concordância, kappa e TPR/TNR por tipo
 (`python -m evals.judge`). O juiz é evidência adicional, nunca gate; só vale depois de reprovar os canários.

@@ -30,7 +30,7 @@ nelsondell?". A resposta curta está na tabela; a origem das ideias externas fic
 | Ação de escrita sem controle fora do LLM | confirmação do dono; risco alto com aprovação de operador com chave pessoal; limite de valor; execução única entre réplicas | `src/app/actions.py`, `src/app/risk.py` |
 | Fato dito em turno ou conversa anterior se perdia | livro de fatos extraído por código + perfil de longo prazo que entra em conversa nova como dado datado, só para o dono | `src/app/memory.py`; memória ao vivo no §0 |
 | A CI não podia chamar o LLM e o eval offline não media o produto ao vivo | cassete de cada resposta ao vivo e replay na CI com o piso da gravação aceita | `evals/run_evals.py` (`--replay`), job `check (replay)` |
-| Juiz validado só contra rótulos escritos a partir da SPEC | conferência humana cega numa página congelada, com respostas adulteradas de propósito misturadas às reais, e o juiz julgando o mesmo texto que as pessoas leram | `scripts/label_page.py`, `evals/label.py`, `evals/results/human_review.json` |
+| Juiz validado só contra rótulos escritos a partir da SPEC | conferência humana cega numa página congelada (ferramenta pronta; validação humana não feita nesta entrega) e, nesta entrega, o juiz de outra família julgando as mesmas respostas | `scripts/label_page.py`, `evals/label.py`, `evals/results/judge_cross.json` |
 | Casos de avaliação escritos por quem escreveu o código | held-out escrito por autores cegos (sem ver código nem casos) e teste que reprova exemplo de treino igual a um caso cego | `evals/heldout_blind.jsonl`, `tests/test_router_contamination.py` |
 
 ## Consequência
