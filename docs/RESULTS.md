@@ -6,13 +6,12 @@ Tudo aqui é gerado por `scripts/fill_readme.py` a partir de `evals/results/` co
 ## Leitura dos números
 
 <!-- reading:begin -->
-- **Na referência (11 de 16):** Juiz: respostas oficiais úteis (helpful) 1.00; Juiz: respostas oficiais fundamentadas 1.00; Oficiais: números com base na evidência 100.0%; Oficiais: todas as checagens por regra em todas as rodadas (sem o juiz) 1.00; Memória ao vivo: pass@1 0.96 e mais 6.
-- **Abaixo:** Oficiais resolvidas por completo (sem humano + todo fato + fonte + juiz: fundamentada; parcial fora) 0.87 (referência 0.90) — resposta parcial (a fonte cobre só parte da pergunta) em `official-04`, `official-05`.
-- **Abaixo:** Oficiais resolvidas por completo: pass^k (todas as rodadas, com o juiz) 0.80 (referência 0.90) — a mesma causa da linha de cima, em todas as rodadas.
+- **Na referência (12 de 16):** Oficiais resolvidas por completo (sem humano + todo fato + fonte + juiz: fundamentada; parcial fora) 0.93; Juiz: respostas oficiais úteis (helpful) 0.97; Juiz: respostas oficiais fundamentadas 0.97; Oficiais: números com base na evidência 100.0%; Oficiais: todas as checagens por regra em todas as rodadas (sem o juiz) 1.00 e mais 7.
+- **Abaixo:** Oficiais resolvidas por completo: pass^k (todas as rodadas, com o juiz) 0.80 (referência 0.90) — resposta parcial (a fonte cobre só parte da pergunta) em `official-04`; fato, fonte ou juiz faltando em `official-01`.
 - **Abaixo:** Juiz validado contra rótulos de pessoas (1 = sim, regra fixada antes) 0 (referência 1) — falta rótulos de pessoas (campo labeler: "human:<nome>"); estes vêm da SPEC ou de modelo.
-- **Parcial, fora da manchete:** 13% das execuções oficiais resolveram só parte da pergunta e disseram o que a fonte não cobre; contam à parte, nunca como resolvidas.
-- **Ao vivo:** 13 splits, 340 execuções, 317 sem nenhuma checagem falhando; os mais fracos pela checagem principal: `partial` (intenção 80%), `heldout` (intenção 89.2%).
-- **Juiz LLM:** oficiais fundamentadas 1.00 e úteis 1.00; ainda não validado contra pessoas: serve para comparar commits, não como medida absoluta.
+- **Parcial, fora da manchete:** 3% das execuções oficiais resolveram só parte da pergunta e disseram o que a fonte não cobre; contam à parte, nunca como resolvidas.
+- **Ao vivo:** 13 splits, 340 execuções, 319 sem nenhuma checagem falhando; os mais fracos pela checagem principal: `partial` (intenção 80%), `heldout` (intenção 89.2%).
+- **Juiz LLM:** oficiais fundamentadas 0.97 e úteis 0.97; ainda não validado contra pessoas: serve para comparar commits, não como medida absoluta.
 - **Gate offline (CI):** intenção 100.0% nos splits do gate (mínimo 90%) → PASS.
 - **Não medido:** Held-out cego: ponta a ponta (humano passa); Rotuladores humanos independentes.
 <!-- reading:end -->
@@ -49,8 +48,8 @@ Modo: `in-process` · provedor `offline`
 | human_once_acc | — | — | — | — | — | 100.0 (n=6) | — | — | — | — | — | — | — | 100.0 (n=6) |
 | after_human_acc | — | — | — | — | — | 0.0 (n=1) | — | — | — | — | — | — | — | 0.0 (n=1) |
 | language_undetected | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 1 | 0 | 7 | 0 | 9 |
-| p50_ms | 69.5 | 56.6 | 59.4 | 635.8 | 40.7 | 2056.3 | 98.0 | 45.2 | 47.2 | 43.8 | 7.9 | 43.2 | 45.4 | 45.5 |
-| p95_ms | 2639.8 | 74.8 | 70.6 | 4314.4 | 72.8 | 3037.2 | 233.9 | 505.5 | 52.0 | 54.2 | 49.0 | 789.9 | 90.4 | 793.8 |
+| p50_ms | 63.6 | 49.2 | 56.9 | 823.1 | 39.5 | 2057.1 | 95.4 | 46.6 | 48.3 | 35.4 | 7.7 | 48.2 | 48.0 | 48.5 |
+| p95_ms | 2050.4 | 67.8 | 65.2 | 2237.0 | 57.0 | 3044.5 | 155.6 | 800.3 | 54.2 | 56.7 | 45.6 | 853.8 | 86.8 | 877.1 |
 | cost_usd | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 |
 | crashes | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 
@@ -94,15 +93,15 @@ Retrieval ativo (dense+windows+cross:base, caminho de busca do agente, `evals/re
 
 | Split | Principal | Todas as checagens | Casos com falha | p50 · p95 | US$ |
 |---|---|---:|---|---:|---:|
-| `official` | resolvidas com parciais **100%** [88.6–100] (n=30) | 30/30 | nenhum | 12.5 s · 19.9 s | 0.67 |
+| `official` | resolvidas com parciais **100%** [88.6–100] (n=30) | 30/30 | nenhum | 12.3 s · 23.7 s | 0.66 |
 | `official-var` | resolvidas com parciais **100%** [83.9–100] (n=20) | 19/20 | `q-offvar-01-en` | 11.6 s · 20.9 s | 0.52 |
 | `approval` | ação pendente **100%** [56.6–100] (n=5) | 5/5 | nenhum | 10.6 s · 20.6 s | 0.14 |
 | `dependent` | resolvidas com parciais **100%** [72.2–100] (n=10) | 10/10 | nenhum | 23.7 s · 32.9 s | 0.34 |
-| `guardrail` | bloqueio certo **100%** [89.3–100] (n=32) | 32/32 | nenhum | 1.6 s · 9.5 s | 0.09 |
+| `guardrail` | bloqueio certo **100%** [89.3–100] (n=32) | 32/32 | nenhum | 1.9 s · 10.6 s | 0.12 |
 | `hard` | números com base **100%** [67.6–100] (n=8) | 8/8 | nenhum | 14.0 s · 19.2 s | 0.26 |
 | `heldout` | intenção **89.2%** [82–93.7] (n=111) | 96/111 | `heldout-H1-10`, `heldout-H1-12`, `heldout-H1-31`, `heldout-H2-11`, `heldout-H2-29` +10 | 10.5 s · 21.8 s | 2.60 |
 | `hitl` | humano no turno certo **100%** [51–100] (n=4) | 6/6 | nenhum | 8.6 s · 14.3 s | 0.07 |
-| `memory` | fato da conversa **97.9%** [89.1–99.6] (n=48) | 46/48 | `memory-02`, `memory-03` | 23.0 s · 47.1 s | 2.53 |
+| `memory` | fato da conversa **100%** [92.6–100] (n=48) | 48/48 | nenhum | 27.6 s · 56.8 s | 2.60 |
 | `parallel` | resolvidas com parciais **100%** [56.6–100] (n=5) | 5/5 | nenhum | 12.4 s · 18.6 s | 0.22 |
 | `partial` | intenção **80%** [37.6–96.4] (n=5) | 4/5 | `q-partial-02` | 12.9 s · 15.9 s | 0.16 |
 | `real` | números com base **100%** [91.2–100] (n=40) | 40/40 | nenhum | 14.8 s · 22.3 s | 1.39 |
@@ -114,28 +113,30 @@ Retrieval ativo (dense+windows+cross:base, caminho de busca do agente, `evals/re
 <!-- trace:begin -->
 **Como ler:** as mesmas linhas ao vivo (`evals/results/live_<split>.json`, contadas por `evals/trace_stats.py`): a latência do turno por split contra o SLO declarado, a fatia do tempo de cada agente e quem decidiu cada passo. Percentis não têm IC: num split com poucas linhas, o p95 fica perto do pior caso e muda de uma bateria para outra.
 
-SLO declarado, por turno: p50 ≤ **20 s** e p95 ≤ **45 s** (padrão do kit; muda por env `SLO_P50_S`/`SLO_P95_S`). Carga da medida: até **8** conversas ao mesmo tempo no processo (13 splits × 8 workers; teto `LIVE_MAX_CONCURRENT` 8), em 4 CPUs: o tempo do turno inclui a CPU dividida com as outras conversas (carga do eval, não a de uma conversa sozinha). Cumprem **12 de 13** splits; não cumprem: `dependent` (p50 23.7 s). Total: p50 12.0 s, p95 22.6 s em 303 linhas (37 bloqueios do guardrail fora do p50/p95: a recusa leva ms).
+SLO declarado, por turno: p50 ≤ **20 s** e p95 ≤ **45 s** (padrão do kit; muda por env `SLO_P50_S`/`SLO_P95_S`). Carga da medida: até **8** conversas ao mesmo tempo no processo (13 splits × 8 workers; teto `LIVE_MAX_CONCURRENT` 8), em 4 CPUs em `approval`, `dependent`, `hard`, `heldout`, `hitl`, `official-var`, `parallel`, `partial`, `real`, `replan`; até **8** conversas ao mesmo tempo no processo (2 splits × 8 workers; teto `LIVE_MAX_CONCURRENT` 8), em 4 CPUs em `memory`, `official`; até **8** conversas ao mesmo tempo no processo (1 split × 8 workers; teto `LIVE_MAX_CONCURRENT` 8), em 4 CPUs em `guardrail`: o tempo do turno inclui a CPU dividida com as outras conversas (carga do eval, não a de uma conversa sozinha). Cumprem **12 de 13** splits; não cumprem: `dependent` (p50 23.7 s). Total: p50 12.2 s, p95 24.2 s em 303 linhas (37 bloqueios do guardrail fora do p50/p95: a recusa leva ms).
 
 | split | linhas | turnos/linha | p50 | p95 | SLO | faq | records | general | escalation | resto | quem decide (LLM · router · código · não registrado) |
 |---|---:|---:|---:|---:|:---:|---:|---:|---:|---:|---:|---|
 | `approval` | 5 | 1 | 10.6 s | 20.6 s | sim | 18% | 25% | — | — | 57% | 100% · 0% · 0% · 0% (n=7) |
 | `dependent` | 10 | 1 | 23.7 s | 32.9 s | **não** | 42% | 16% | — | — | 42% | 100% · 0% · 0% · 0% (n=20) |
-| `guardrail` | 6 (+26 bloqueadas) | 1 | 8.9 s | 13.3 s | sim | 14% | 14% | 4% | 0% | 68% | 100% · 0% · 0% · 0% (n=5) |
+| `guardrail` | 6 (+26 bloqueadas) | 1 | 8.4 s | 14.1 s | sim | 12% | 15% | 3% | 0% | 69% | 86% · 0% · 14% · 0% (n=7) |
 | `hard` | 8 | 1 | 14.0 s | 19.2 s | sim | 29% | 20% | 7% | — | 44% | 100% · 0% · 0% · 0% (n=13) |
 | `heldout` | 101 (+10 bloqueadas) | 1 | 10.9 s | 21.8 s | sim | 29% | 13% | 7% | 0% | 51% | 100% · 0% · 0% · 0% (n=134) |
 | `hitl` | 6 | 1 | 8.6 s | 14.3 s | sim | — | 6% | — | 0% | 94% | 100% · 0% · 0% · 0% (n=7) |
-| `memory` | 48 | 2.1 | 11.5 s | 22.8 s | sim | 32% | 11% | — | — | 56% | 100% · 0% · 0% · 0% (n=63) |
-| `official` | 30 | 1 | 12.5 s | 19.9 s | sim | 30% | 9% | 6% | — | 55% | 100% · 0% · 0% · 0% (n=36) |
+| `memory` | 48 | 2.1 | 13.8 s | 26.8 s | sim | 36% | 11% | — | — | 53% | 100% · 0% · 0% · 0% (n=65) |
+| `official` | 30 | 1 | 12.3 s | 23.7 s | sim | 34% | 8% | 5% | — | 53% | 100% · 0% · 0% · 0% (n=36) |
 | `official-var` | 20 | 1 | 11.6 s | 20.9 s | sim | 32% | 8% | 4% | — | 55% | 100% · 0% · 0% · 0% (n=24) |
 | `parallel` | 5 | 1 | 12.4 s | 18.6 s | sim | 25% | 14% | 21% | — | 40% | 100% · 0% · 0% · 0% (n=11) |
 | `partial` | 5 | 1 | 12.9 s | 15.9 s | sim | 47% | — | — | — | 53% | 100% · 0% · 0% · 0% (n=5) |
 | `real` | 40 | 1 | 14.8 s | 22.3 s | sim | 44% | 9% | — | 0% | 46% | 100% · 0% · 0% · 0% (n=64) |
 | `replan` | 19 (+1 bloqueada) | 1 | 11.6 s | 23.4 s | sim | 35% | 15% | — | 0% | 50% | 100% · 0% · 0% · 0% (n=35) |
-| **total** | 303 (+37 bloqueadas) | 1.2 | 12.0 s | 22.6 s | sim | 33% | 12% | 4% | 0% | 52% | 100% · 0% · 0% · 0% (n=424) |
+| **total** | 303 (+37 bloqueadas) | 1.2 | 12.2 s | 24.2 s | sim | 34% | 12% | 4% | 0% | 51% | 100% · 0% · 0% · 0% (n=428) |
 
-Onde vai o tempo (total): faq **33%** · records **12%** · general **4%** · escalation **0%** · resto **52%** = router, supervisor, guardrails e checagens, que não têm passo próprio. Fatia = soma dos ms do agente ÷ soma do tempo do turno a que os passos pertencem (`turn_ms`; na linha de turno único, `ms`); passos em paralelo somam cada um o seu tempo. Em `memory` (2.1 turnos/linha; conversa: p50 23.0 s, p95 47.1 s) a linha cronometra a conversa inteira; ali a latência do turno é ms ÷ turnos.
+Onde vai o tempo (total): faq **34%** · records **12%** · general **4%** · escalation **0%** · resto **51%** = router, supervisor, guardrails e checagens, que não têm passo próprio. Fatia = soma dos ms do agente ÷ soma do tempo do turno a que os passos pertencem (`turn_ms`; na linha de turno único, `ms`); passos em paralelo somam cada um o seu tempo. Em `memory` (2.1 turnos/linha; conversa: p50 27.6 s, p95 56.8 s) a linha cronometra a conversa inteira; ali a latência do turno é ms ÷ turnos.
 
-Quem decide (424 passos do turno, fora a resposta da operadora e o aviso de caso aberto): supervisor LLM **100%** (tool call).
+Quem decide (428 passos do turno, fora a resposta da operadora e o aviso de caso aberto): supervisor LLM **100%** (tool call) · código **0%** (`escalation` 1).
+
+Uma conversa por vez (split `official`, 10 turnos, `--workers 1`): p50 **14.5 s**, p95 21.8 s. É a latência de um lojista sozinho; a tabela acima divide as CPUs entre as conversas do eval.
 <!-- trace:end -->
 
 ## Juiz LLM sobre as respostas ao vivo
@@ -143,24 +144,24 @@ Quem decide (424 passos do turno, fora a resposta da operadora e o aviso de caso
 <!-- judge:begin -->
 **Como ler:** um juiz LLM lê cada resposta ao vivo com a evidência que ela usou, fontes e dados de ferramenta (`evals/results/judge.json`): grounded = toda afirmação tem apoio nela; helpful = resolve o que foi pedido. Entre colchetes, o IC95 de Wilson com o n de respostas julgadas. A calibração abaixo é contra o gabarito da SPEC, não contra pessoas; a validação contra pessoas é o bloco de validação humana e, enquanto ele não disser "validado", o juiz serve para comparar commits (regressão), não como medida absoluta.
 
-Modelo `claude-opus-5-5` · status `ran` · arquivos live_approval.json, live_dependent.json, live_guardrail.json, live_hard.json, live_heldout.json, live_hitl.json, live_memory.json, live_official-var.json, live_official.json, live_parallel.json, live_partial.json, live_real.json, live_replan.json · gasto US$ 6.135932
+Modelo `claude-opus-5-5` · status `ran` · arquivos live_approval.json, live_dependent.json, live_guardrail.json, live_hard.json, live_heldout.json, live_hitl.json, live_memory.json, live_official-var.json, live_official.json, live_parallel.json, live_partial.json, live_real.json, live_replan.json · gasto US$ 7.813592
 
 | split | casos | grounded | helpful | nota média |
 |---|---:|---:|---:|---:|
 | approval | 5 | 1.0 [IC95 56.6–100.0; n=5] | 1.0 [IC95 56.6–100.0; n=5] | 5.0 |
 | dependent | 10 | 1.0 [IC95 72.2–100.0; n=10] | 1.0 [IC95 72.2–100.0; n=10] | 5.0 |
-| guardrail | 31 | 1.0 [IC95 89.0–100.0; n=31] | 1.0 [IC95 89.0–100.0; n=31] | 4.94 |
+| guardrail | 31 | 1.0 [IC95 89.0–100.0; n=31] | 1.0 [IC95 89.0–100.0; n=31] | 5.0 |
 | hard | 8 | 1.0 [IC95 67.6–100.0; n=8] | 1.0 [IC95 67.6–100.0; n=8] | 4.75 |
 | heldout | 111 | 0.937 [IC95 87.6–96.9; n=111] | 0.955 [IC95 89.9–98.1; n=111] | 4.63 |
 | hitl | 6 | 1.0 [IC95 61.0–100.0; n=6] | 1.0 [IC95 61.0–100.0; n=6] | 5.0 |
-| memory | 48 | 0.917 [IC95 80.4–96.7; n=48] | 0.979 [IC95 89.1–99.6; n=48] | 4.69 |
-| official | 30 | 1.0 [IC95 88.6–100.0; n=30] | 1.0 [IC95 88.6–100.0; n=30] | 4.9 |
+| memory | 48 | 0.958 [IC95 86.0–98.8; n=48] | 0.979 [IC95 89.1–99.6; n=48] | 4.77 |
+| official | 30 | 0.967 [IC95 83.3–99.4; n=30] | 0.967 [IC95 83.3–99.4; n=30] | 4.73 |
 | official-var | 20 | 0.95 [IC95 76.4–99.1; n=20] | 0.95 [IC95 76.4–99.1; n=20] | 4.7 |
 | parallel | 5 | 1.0 [IC95 56.6–100.0; n=5] | 1.0 [IC95 56.6–100.0; n=5] | 5.0 |
 | partial | 5 | 1.0 [IC95 56.6–100.0; n=5] | 1.0 [IC95 56.6–100.0; n=5] | 4.8 |
 | real | 40 | 0.975 [IC95 87.1–99.6; n=40] | 0.975 [IC95 87.1–99.6; n=40] | 4.47 |
 | replan | 20 | 0.95 [IC95 76.4–99.1; n=20] | 0.95 [IC95 76.4–99.1; n=20] | 4.5 |
-| ALL | 339 | 0.959 [IC95 93.2–97.5; n=339] | 0.973 [IC95 95.0–98.6; n=339] | 4.7 |
+| ALL | 339 | 0.962 [IC95 93.6–97.7; n=339] | 0.971 [IC95 94.7–98.4; n=339] | 4.71 |
 
 Gabarito de calibração (rótulos da SPEC, não humanos salvo rotulagem): 46 rótulos · concordância **0.913** [IC95 79.7–96.6; n=46] · kappa de Cohen **0.822** · TPR 0.81 [IC95 60.0–92.3; n=21] (21 grounded) · TNR 1.0 [IC95 86.7–100.0; n=25] (25 não grounded) · discordâncias: q-cal-08, q-cal-12, q-cal-13, q-cal-15
 - q-rag: concordância 1.0 [IC95 77.2–100.0; n=13] · kappa 1.0 (13 rótulos)
@@ -169,6 +170,7 @@ Gabarito de calibração (rótulos da SPEC, não humanos salvo rotulagem): 46 r�
 
 Canários: o juiz reprovou **4/4** registros sintéticos com defeito conhecido (contradiz a evidência, afirma sem evidência, idioma errado, vaza dado de outro cliente).
 Família: juiz `claude-opus-5-5` (anthropic) × gerador `claude-haiku-5-5`, `claude-sonnet-5-5` (anthropic): **mesma família**. juiz da mesma família do gerador (anthropic): pode favorecer texto da própria família; para outra família, `evals.judge --cross` (JUDGE_PROVIDER=openai_compat + JUDGE_BASE_URL/JUDGE_MODEL)
+Segundo juiz, de outra família (`gpt-5`, openai), nas mesmas 291 respostas: fundamentadas 0.928 × 0.962 do juiz principal; concordância 0.924, kappa 0.277, AC1 0.916; 22 divergências listadas em `evals/results/judge_agree.json`.
 <!-- judge:end -->
 
 ## Validação humana (às cegas, por rotulador)
@@ -195,6 +197,8 @@ Gold `retrieval.jsonl`, medido em 2026-11-05T22:40:53+00:00 (commit `9a78160`), 
 | dense+windows+cross:base **← escolhida** | 0.924 | 0.884 | 0.909 | 0.935 | 0.88 | 0.978 | 931.2 | 1064.1 | 2382.1 | 100% / 100% (nota do cross) |
 
 `:base` = a ordem fica a do buscador base; a nota do cross-encoder só decide o portão sem fonte.
+
+Gold independente (perguntas reais e held-out; relevância marcada por `gpt-5`, outra família, nos 10 primeiros trechos): 55 de 77 perguntas com algum trecho útil; nelas hit@3 **0.891**, hit@5 0.982, MRR@10 0.841. O limiar sem fonte segue calibrado no gold do time; aqui ele não é ajustado.
 <!-- retrieval:end -->
 
 ## Replanejamento (com × sem)
@@ -216,6 +220,7 @@ Gold `retrieval.jsonl`, medido em 2026-11-05T22:40:53+00:00 (commit `9a78160`), 
 
 Ablação (offline): desfecho certo no split replan **55.0% com** × **50.0% sem** replanejamento (mesmos 20 casos).
 Ablação ao vivo sem `needs` (dependent, com × sem): mesmos 10 casos, mesmo commit `0e03bac`; passo dependente concluído 100.0% × 70.0%; números com base 100.0% × 100.0%; frases com base 100.0% × 100.0%; p50 23.7 s × 12.5 s; p50 só nos 10 casos em que o achado disparou 23.7 s × 12.5 s; sem checagem reprovada nos 10 casos em que a ferramenta achou algo: **10/10 com × 7/10 sem** (execuções); US$ por caso 0.034 × 0.031; 10 achados no braço com `needs`: o modelo chamou o agente pedido 9, o agente já tinha rodado 1.
+Ablação ao vivo sem `needs` (heldout): não comparável (status aborted_max_usd, 105 × 111 casos).
 <!-- replan:end -->
 
 ## Tabelas completas por split (ao vivo)
@@ -225,15 +230,15 @@ Ablação ao vivo sem `needs` (dependent, com × sem): mesmos 10 casos, mesmo co
 
 #### Split `official` — `live_official.json`
 
-Provedor `anthropic` · status `complete` · gasto US$ 0.669989 (teto 1.534527)
+Provedor `anthropic` · status `complete` · gasto US$ 0.664147 (teto 1.830784)
 
-**Resolvidas por completo** (sem humano, todo fato de referência na resposta, fonte citada, o juiz diz fundamentada e nenhum passo parcial): official **86.7%** [IC95 70.3–94.7; n=30] · pass^3 80%; pela regra: 100.0%; parciais 13.3% (4 de 30: official-04, official-05), com elas 100.0%.
+**Resolvidas por completo** (sem humano, todo fato de referência na resposta, fonte citada, o juiz diz fundamentada e nenhum passo parcial): official **93.3%** [IC95 78.7–98.2; n=30] · pass^3 80%; pela regra: 100.0%; parciais 3.3% (1 de 30: official-04), com elas 96.7% (não resolvidos: official-01).
 
-**Regex de fato × juiz** (linhas em que discordam): official: 0 de 30 linhas julgadas.
+**Regex de fato × juiz** (linhas em que discordam): official: 1 de 30 linhas julgadas; a regex achou todo fato e o juiz não fundamentou (contam como não resolvidas): `official-01`.
 
 resolvidas com parciais **100%** [88.6–100] (n=30) · intenção **100%** [88.6–100] (n=30) · humano certo **100%** [88.6–100] (n=30) · números com base **100%** [88.6–100] (n=30) · idioma **100%** [88.6–100] (n=30)
 
-Latência e custo: p50 12.5 s · p95 19.9 s · US$ 0.669989 no split.
+Latência e custo: p50 12.3 s · p95 23.7 s · US$ 0.664147 no split.
 
 Estabilidade (3 rodadas): pass@1 100.0% · pass^3 100.0% · instáveis: —.
 
@@ -279,11 +284,11 @@ Casos com alguma checagem falhando: nenhum.
 
 #### Split `guardrail` — `live_guardrail.json`
 
-Provedor `anthropic` · status `complete` · gasto US$ 0.088302 (teto 1.636829)
+Provedor `anthropic` · status `complete` · gasto US$ 0.119592 (teto 3.0)
 
 intenção **100%** [89.3–100] (n=32) · humano certo **100%** [43.9–100] (n=3) · números com base **100%** [61–100] (n=6) · bloqueio certo **100%** [89.3–100] (n=32) · idioma **100%** [61–100] (n=6)
 
-Latência e custo: p50 1.6 s · p95 9.5 s · US$ 0.088302 no split.
+Latência e custo: p50 1.9 s · p95 10.6 s · US$ 0.119592 no split.
 
 Casos com alguma checagem falhando: nenhum.
 
@@ -319,15 +324,15 @@ Casos com alguma checagem falhando: nenhum.
 
 #### Split `memory` — `live_memory.json`
 
-Provedor `anthropic` · status `complete` · gasto US$ 2.527286 (teto 5.063939)
+Provedor `anthropic` · status `complete` · gasto US$ 2.600699 (teto 6.169216)
 
-intenção **100%** [92.6–100] (n=48) · humano certo **100%** [92.6–100] (n=48) · fato da conversa **97.9%** [89.1–99.6] (n=48) · números com base **100%** [92.6–100] (n=48) · idioma **100%** [92.6–100] (n=48)
+intenção **100%** [92.6–100] (n=48) · humano certo **100%** [92.6–100] (n=48) · fato da conversa **100%** [92.6–100] (n=48) · números com base **100%** [92.6–100] (n=48) · idioma **100%** [92.6–100] (n=48)
 
-Latência e custo: p50 23.0 s · p95 47.1 s · US$ 2.52729 no split.
+Latência e custo: p50 27.6 s · p95 56.8 s · US$ 2.6007 no split.
 
-Estabilidade (3 rodadas): pass@1 95.8% · pass^3 87.5% · instáveis: memory-02, memory-03.
+Estabilidade (3 rodadas): pass@1 100.0% · pass^3 100.0% · instáveis: —.
 
-Casos com alguma checagem falhando: `memory-02`, `memory-03`.
+Casos com alguma checagem falhando: nenhum.
 
 #### Split `parallel` — `live_parallel.json`
 
