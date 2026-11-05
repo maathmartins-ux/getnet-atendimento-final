@@ -44,7 +44,7 @@ jobs:
     env:
       FASTEMBED_CACHE_PATH: /home/runner/.cache/fastembed
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0  # histórico inteiro: o gitleaks varre todos os commits, não só o último
       # segredo vazado no histórico (chave de API, token): falha antes de qualquer outra etapa
@@ -112,7 +112,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 20  # job travado falha e avisa, em vez de segurar o relógio
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
         with:
           python-version: "3.12"
@@ -144,7 +144,7 @@ jobs:
     env:
       TEST_DATABASE_URL: postgresql://postgres:ci-only-password@127.0.0.1:5432/postgres
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
         with:
           python-version: "3.12"
@@ -170,7 +170,7 @@ jobs:
     env:
       FASTEMBED_CACHE_PATH: /home/runner/.cache/fastembed
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
         with:
           python-version: "3.12"
@@ -202,7 +202,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 30  # job travado falha e avisa, em vez de segurar o relógio
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       # vetores do corpus para o build (o Dockerfile copia var/embeddings e só calcula o que falta). Sem cache de
       # camadas no Actions: medido (05/11), gravar as camadas (modelos de ~1,7 GB) levava 569 s por execução e a
       # camada de dependências rodava de novo mesmo assim (43 s); sem ele o build é dependências + modelos + código.
