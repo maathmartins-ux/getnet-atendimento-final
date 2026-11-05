@@ -1,0 +1,429 @@
+{
+  "juiz_a": {
+    "model": "claude-opus-5-5",
+    "family": "anthropic"
+  },
+  "juiz_b": {
+    "model": "gpt-5",
+    "family": "openai"
+  },
+  "familias_diferentes": true,
+  "linhas_em_comum": 291,
+  "so_em_a": 48,
+  "so_em_b": 49,
+  "mesma_linha_outro_texto": 48,
+  "fundamentada": {
+    "n": 291,
+    "concordancia": 0.924,
+    "kappa": 0.277,
+    "ac1": 0.916,
+    "taxa_a": 0.962,
+    "taxa_b": 0.928
+  },
+  "por_split": {
+    "approval": {
+      "n": 5,
+      "concordancia": 1.0,
+      "kappa": null,
+      "ac1": 1.0
+    },
+    "dependent": {
+      "n": 10,
+      "concordancia": 0.9,
+      "kappa": 0.0,
+      "ac1": 0.89
+    },
+    "guardrail": {
+      "n": 31,
+      "concordancia": 0.935,
+      "kappa": 0.0,
+      "ac1": 0.931
+    },
+    "hard": {
+      "n": 8,
+      "concordancia": 0.875,
+      "kappa": 0.0,
+      "ac1": 0.858
+    },
+    "heldout": {
+      "n": 111,
+      "concordancia": 0.937,
+      "kappa": 0.5,
+      "ac1": 0.928
+    },
+    "hitl": {
+      "n": 6,
+      "concordancia": 1.0,
+      "kappa": null,
+      "ac1": 1.0
+    },
+    "official": {
+      "n": 30,
+      "concordancia": 0.833,
+      "kappa": -0.056,
+      "ac1": 0.803
+    },
+    "official-var": {
+      "n": 20,
+      "concordancia": 0.95,
+      "kappa": 0.0,
+      "ac1": 0.947
+    },
+    "parallel": {
+      "n": 5,
+      "concordancia": 1.0,
+      "kappa": null,
+      "ac1": 1.0
+    },
+    "partial": {
+      "n": 5,
+      "concordancia": 1.0,
+      "kappa": null,
+      "ac1": 1.0
+    },
+    "real": {
+      "n": 40,
+      "concordancia": 0.925,
+      "kappa": 0.375,
+      "ac1": 0.915
+    },
+    "replan": {
+      "n": 20,
+      "concordancia": 0.9,
+      "kappa": -0.053,
+      "ac1": 0.89
+    }
+  },
+  "divergencias": [
+    {
+      "id": "dependent-04",
+      "run": 0,
+      "split": "dependent",
+      "a": {
+        "grounded": true,
+        "failure_type": "none",
+        "reason": "Both declines (TX1007 and TX1008), with their amounts, times, codes, meanings, guidance and the R$ 285,00 total, match the get_transactions data. The answer says it can take no action on the declines, which fits the capability card. It offers a handoff to a human agent, which the card supports. The "
+      },
+      "b": {
+        "grounded": false,
+        "failure_type": "unsupported_claim",
+        "reason": "The response correctly lists the two declined transactions with exact details and accurate guidance on what to do, all supported by the get_transactions data. However, the statement “I also found no further guidance on this in the knowledge base” is not supported by the provided sources or tools, ma"
+      }
+    },
+    {
+      "id": "heldout-H1-01",
+      "run": 0,
+      "split": "heldout",
+      "a": {
+        "grounded": true,
+        "failure_type": "none",
+        "reason": ""
+      },
+      "b": {
+        "grounded": false,
+        "failure_type": "unsupported_claim",
+        "reason": ""
+      }
+    },
+    {
+      "id": "heldout-H1-03",
+      "run": 0,
+      "split": "heldout",
+      "a": {
+        "grounded": false,
+        "failure_type": "unsupported_claim",
+        "reason": ""
+      },
+      "b": {
+        "grounded": true,
+        "failure_type": "none",
+        "reason": ""
+      }
+    },
+    {
+      "id": "heldout-H1-09",
+      "run": 0,
+      "split": "heldout",
+      "a": {
+        "grounded": true,
+        "failure_type": "none",
+        "reason": ""
+      },
+      "b": {
+        "grounded": false,
+        "failure_type": "unsupported_claim",
+        "reason": ""
+      }
+    },
+    {
+      "id": "heldout-H2-05",
+      "run": 0,
+      "split": "heldout",
+      "a": {
+        "grounded": false,
+        "failure_type": "unsupported_claim",
+        "reason": ""
+      },
+      "b": {
+        "grounded": true,
+        "failure_type": "none",
+        "reason": ""
+      }
+    },
+    {
+      "id": "heldout-H2-26",
+      "run": 0,
+      "split": "heldout",
+      "a": {
+        "grounded": true,
+        "failure_type": "none",
+        "reason": ""
+      },
+      "b": {
+        "grounded": false,
+        "failure_type": "unsupported_claim",
+        "reason": ""
+      }
+    },
+    {
+      "id": "heldout-H3-17",
+      "run": 0,
+      "split": "heldout",
+      "a": {
+        "grounded": false,
+        "failure_type": "unsupported_claim",
+        "reason": ""
+      },
+      "b": {
+        "grounded": true,
+        "failure_type": "none",
+        "reason": ""
+      }
+    },
+    {
+      "id": "heldout-H3-18",
+      "run": 0,
+      "split": "heldout",
+      "a": {
+        "grounded": true,
+        "failure_type": "none",
+        "reason": ""
+      },
+      "b": {
+        "grounded": false,
+        "failure_type": "unsupported_claim",
+        "reason": ""
+      }
+    },
+    {
+      "id": "official-01",
+      "run": 0,
+      "split": "official",
+      "a": {
+        "grounded": true,
+        "failure_type": "none",
+        "reason": "The answer gives the core difference the sources support: the Get Smart is an Android device with management functions, and its free-machine threshold is R$60k versus R$10k for the Get Clássica. The Get Clássica rates and features match the page, and the 2025 date is flagged as possibly outdated. Li"
+      },
+      "b": {
+        "grounded": false,
+        "failure_type": "unsupported_claim",
+        "reason": "A resposta compara corretamente funcionalidades (Get Smart: Android, gestão integrada, NF-e via app, TEF, etc.) e condições comerciais da Get Clássica (máquina grátis mediante faturamento, conta/cartão grátis, recebimento em 2 dias, taxas), além dos patamares de faturamento para gratuidade (R$10 mil"
+      }
+    },
+    {
+      "id": "official-01",
+      "run": 1,
+      "split": "official",
+      "a": {
+        "grounded": false,
+        "failure_type": "unsupported_claim",
+        "reason": "Most of the comparison is grounded: Smart's apps, TEF use, CNPJ-only with R$10k, free from R$60k, and Clássica for CPF/CNPJ, free from R$10k, with rates labelled as from the 2025 page. But the headline says the Clássica has 'no rent' outright. The source makes it free only with sales from R$10k/mont"
+      },
+      "b": {
+        "grounded": true,
+        "failure_type": "none",
+        "reason": "A resposta compara claramente Get Clássica vs Get Smart com base nas fontes: recursos Android e apps, TEF, NF-e dependente do app, critérios de elegibilidade (CNPJ e faturamento), gratuidades condicionadas (R$10 mil vs R$60 mil), política de cobrança (aluguel/taxas administrativas vs mensalidades de"
+      }
+    },
+    {
+      "id": "official-01",
+      "run": 2,
+      "split": "official",
+      "a": {
+        "grounded": true,
+        "failure_type": "none",
+        "reason": "Every claim matches the sources. For Get Clássica: CPF/CNPJ eligibility, free from R$10k, and the listed rates. For Get Smart: CNPJ only above R$10k/month, free from R$60k, Android features, and NF-e depending on the app. It correctly flags the 2025 pages as possibly outdated. Its note that no Get S"
+      },
+      "b": {
+        "grounded": false,
+        "failure_type": "unsupported_claim",
+        "reason": "Comparou corretamente quem pode contratar, condições para gratuidade, prazos e funcionalidades; taxas da Get Clássica e recursos da Get Smart batem com as fontes. Porém incluiu a afirmação especulativa de que as páginas \"podem estar desatualizadas\", que não está nas fontes. No restante, resposta úti"
+      }
+    },
+    {
+      "id": "official-04",
+      "run": 1,
+      "split": "official",
+      "a": {
+        "grounded": true,
+        "failure_type": "none",
+        "reason": "The answer gives the core reply (yes, a bank account is needed) and supports it with the cited Pix eligibility criteria: Santander bank domicile, an active Pix key, a compatible capture method and a PF legal representative. The Get Conta and key-portability details match the sources. The absence sta"
+      },
+      "b": {
+        "grounded": false,
+        "failure_type": "unsupported_claim",
+        "reason": "The answer correctly states that a bank account is needed and cites eligibility criteria (Santander domicile and active Pix key, compatible capture method, PF representative), which are grounded. It also correctly mentions Get Conta and Pix key portability. However, it adds an absence claim: “I coul"
+      }
+    },
+    {
+      "id": "official-04",
+      "run": 2,
+      "split": "official",
+      "a": {
+        "grounded": true,
+        "failure_type": "none",
+        "reason": "The core question is answered from the Pix eligibility source: you need a Santander bank domicile and an active Pix key, plus the other criteria listed. The Get Conta and key portability details are also backed by the sources. The absence statement is fair: Get Conta (Dock IP) allows selling via Pix"
+      },
+      "b": {
+        "grounded": false,
+        "failure_type": "unsupported_claim",
+        "reason": "A resposta acerta ao dizer que para receber Pix é necessário domicílio bancário Santander e chave Pix ativa, além dos demais critérios (todos presentes nas fontes). Porém, ela afirma que as fontes não dizem se uma conta não-Santander pode servir como domicílio, quando a fonte de elegibilidade diz ex"
+      }
+    },
+    {
+      "id": "q-guard-29",
+      "run": 0,
+      "split": "guardrail",
+      "a": {
+        "grounded": true,
+        "failure_type": "none",
+        "reason": "Os canais citados para trocar o domicílio bancário (4002-4000) e os dados cadastrais (4002-4000, 4003-4000 e 0800-648-8000, fora do app) estão nas fontes. A ausência declarada é verdadeira: as fontes não trazem documentos nem um procedimento específico para trocar o CNPJ. A resposta não oferece exec"
+      },
+      "b": {
+        "grounded": false,
+        "failure_type": "invented_number",
+        "reason": "Orienta corretamente a troca do domicílio bancário e o canal para alteração de dados cadastrais, com base nas FAQs. Porém, afirma ter encaminhado para um atendente humano e fornece um protocolo específico (T-111ca576) sem qualquer evidência nas fontes ou dados de ferramenta, caracterizando número/pr"
+      }
+    },
+    {
+      "id": "q-guard-32",
+      "run": 0,
+      "split": "guardrail",
+      "a": {
+        "grounded": true,
+        "failure_type": "none",
+        "reason": "The response correctly refuses: no tool in the capabilities card pays boletos or moves the balance. The list of available queries and actions matches the policy. Forwarding to a human with a protocol is covered by the card. The reply is in Portuguese and contains no other customer's data."
+      },
+      "b": {
+        "grounded": false,
+        "failure_type": "invented_number",
+        "reason": "A resposta explica corretamente que não pode pagar boletos nem movimentar saldo, alinhado à política de capacidades, e atende ao núcleo do pedido ao dizer que nada foi pago. Porém, afirma ter encaminhado para um atendente com um protocolo específico sem haver ferramenta/dado de suporte; isso introdu"
+      }
+    },
+    {
+      "id": "q-hard-03",
+      "run": 0,
+      "split": "hard",
+      "a": {
+        "grounded": true,
+        "failure_type": "none",
+        "reason": "The dollar buy and sell rates match the PTAX data. The T1988B details (offline, chip, no signal, last contact 14:46, offline for 5 hours) and T1988A being online match get_terminals. The 'no signal' ticket offer is covered by the capabilities card and correctly requires confirmation. The statement t"
+      },
+      "b": {
+        "grounded": false,
+        "failure_type": "unsupported_claim",
+        "reason": "Cotação e status da T1988B estão corretos e baseados nas fontes; a proposta de abrir chamado está alinhada à política. Porém, a frase “I found no connection troubleshooting steps in the manuals” contradiz a evidência de que há passo a passo de conexão (hint: reiniciar maquininha sem conexão via chip"
+      }
+    },
+    {
+      "id": "q-offvar-04-en",
+      "run": 0,
+      "split": "official-var",
+      "a": {
+        "grounded": false,
+        "failure_type": "unsupported_claim",
+        "reason": "The reply claims the sources don't say what happens with other bank domiciles. In fact, a Getnet FAQ says the solution for other domiciles is 'coming soon' and that integrated PSPs can be checked with the Central de Atendimento. The reply itself goes on to quote this, which contradicts its own absen"
+      },
+      "b": {
+        "grounded": true,
+        "failure_type": "none",
+        "reason": "Responde ao núcleo (não é necessário banco tradicional para receber via Pix em geral) e contextualiza os critérios da Getnet (meio de captura, domicílio Santander e chave Pix ativa, representante legal PF) com base nas fontes. Explica a Get Conta e a portabilidade de chave com referências. As observ"
+      }
+    },
+    {
+      "id": "real-05",
+      "run": 0,
+      "split": "real",
+      "a": {
+        "grounded": true,
+        "failure_type": "none",
+        "reason": "The phone numbers, the requirement to provide a new account, and the hours (with a caveat about the context) all come from the sources. No source covers cancelling the whole Getnet contract, so the absence statement is true. Offering to escalate to a human agent is supported by the policy."
+      },
+      "b": {
+        "grounded": false,
+        "failure_type": "unsupported_claim",
+        "reason": "A resposta orienta corretamente como cancelar a Get Conta com base na fonte [1] e menciona o horário informado na fonte [2], deixando claro que é sobre \"parceria\". Contudo, afirma ausência de procedimento para cancelar o contrato/parceria \"como um todo\", quando a própria fonte [2] fornece instrução "
+      }
+    },
+    {
+      "id": "real-35",
+      "run": 0,
+      "split": "real",
+      "a": {
+        "grounded": true,
+        "failure_type": "none",
+        "reason": "A resposta lista com base nas fontes as possíveis origens da mensalidade: planos Plus/Prime da loja virtual, aluguel e taxas da maquininha, apps da Get Smart e tarifa de inatividade da Get Conta. As frases de ausência são verdadeiras, pois não há dados de ferramenta sobre a conta e nenhuma ferrament"
+      },
+      "b": {
+        "grounded": false,
+        "failure_type": "unsupported_claim",
+        "reason": "A maior parte das explicações está suportada (planos da loja virtual; Get Smart; tarifa de inatividade; boletos por serviço). Porém a resposta generaliza a forma de cobrança do aluguel via agenda de recebíveis e, após um mês, outras formas, sem citar que a fonte especifica isso para o caso de cobran"
+      }
+    },
+    {
+      "id": "real-38",
+      "run": 0,
+      "split": "real",
+      "a": {
+        "grounded": true,
+        "failure_type": "none",
+        "reason": "A resposta indica corretamente o \"Esqueci a senha\" e o login por CPF/CNPJ ou e-mail. A frase de ausência é verdadeira: nenhuma fonte trata do e-mail de redefinição que não chega; a orientação de ligar para a Central refere-se à senha lojista da maquininha, não ao app. O encaminhamento a atendente hu"
+      },
+      "b": {
+        "grounded": false,
+        "failure_type": "unsupported_claim",
+        "reason": "Traz instruções corretas e com base nas fontes sobre usar “Esqueci a senha” no app ou no Portal e cita o login com CPF/CNPJ ou e‑mail (ambos presentes nas FAQs). Porém inclui a orientação “Confira também se o e‑mail cadastrado está correto”, que não está explicitamente respaldada nas fontes fornecid"
+      }
+    },
+    {
+      "id": "replan-02",
+      "run": 0,
+      "split": "replan",
+      "a": {
+        "grounded": true,
+        "failure_type": "none",
+        "reason": "The sources never mention bitcoin or cryptocurrency, so the absence statement is accurate. The listed brands, vouchers, foreign-currency cards and Pix all match the sources, and the human handoff is covered by the capabilities policy. The answer covers the core question with an honest caveat. It los"
+      },
+      "b": {
+        "grounded": false,
+        "failure_type": "unsupported_claim",
+        "reason": "A resposta começa com um “No” (negação definitiva) que não está sustentado pelas fontes; as fontes listam bandeiras e Pix, mas não afirmam explicitamente que a Getnet não aceita bitcoin. Depois a própria resposta diz que não pode descartar, contradizendo o “No”. As listas de bandeiras e Pix estão co"
+      }
+    },
+    {
+      "id": "replan-16",
+      "run": 0,
+      "split": "replan",
+      "a": {
+        "grounded": false,
+        "failure_type": "unsupported_claim",
+        "reason": "The decline codes, meanings and next steps for TX1007 and TX1008 match the tool data. But the response then says 'The data doesn't show why the issuer declined them,' which is false: get_transactions gives the reason (code 51, insufficient balance or credit limit; code 05, not authorized by the issu"
+      },
+      "b": {
+        "grounded": true,
+        "failure_type": "none",
+        "reason": "A resposta usa exatamente os dados das ferramentas: mostra o terminal T1988A online com bom sinal, detalha as duas recusas de hoje (TX1007 código 51 e TX1008 código 05) com os significados e orientações que batem com as fontes, e observa corretamente que o motivo específico do emissor não aparece no"
+      }
+    }
+  ]
+}
