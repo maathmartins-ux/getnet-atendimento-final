@@ -1,0 +1,294 @@
+Você é a sessão do relógio (M, o regente) de uma tentativa cronometrada com o DOMÍNIO MONTADO: no máximo 58 min do
+commit de scaffold ao último commit (REGRA DURA); o plano fecha em T+50, com folga. Mire ≥ 9,0 na nossa régua. Responda
+ao dono em português simples (não é da área). A cada ~5 min mande UMA linha com a hora TIRADA DA MÁQUINA:
+  T0=$(git log --format=%ct --grep='^chore: scaffold' | tail -1); echo "T+$(( ($(date +%s) - T0) / 60 )) min · $(TZ=America/Sao_Paulo date +%H:%M) Brasília"
++ marco atual + adiantado/atrasado em min + próximo passo. TEMPO SOBRANDO É PARA mais um ciclo medir → corrigir →
+medir, nunca para parar. Há uma sessão maestra fora do relógio (PLAYBOOK §2.2): ela publica as páginas humanas e entrega
+em ramos fix/<x>; você integra com merge --no-ff e mensagem SEM a palavra "maestra" (ex.: "merge fix/rotulos: rótulos
+humanos"): as avaliações leram "merge maestra" no README como jargão de processo.
+
+NESTA TENTATIVA (produção da rodada 18, a ÚLTIMA; ordem do dono: sem pessoa nenhuma no relógio):
+- Repositório: getnet-atendimento-final (main com 1 commit; kit-fonte = kit da rodada 18 + o held-out humano + o atendimento humano).
+- AMBIENTE AQUECIDO: o script do ambiente já instalou as dependências e os modelos da busca. No T+0 só confira
+  (`python3 -c "import fastembed, fastapi, pytest"`); se faltar algo, rode o item 1 em 2º plano, sem esperar em 1º.
+- HELD-OUT ESCRITO POR PESSOAS (PLAYBOOK A7c): docs/kit/heldout_humano.json, 31 perguntas (pessoa:Matheus 15,
+  pessoa:Bianca 16), escritas em 05/11 de manhã, antes do relógio, sem ver código, casos nem respostas; as mesmas da
+  rodada 17, reaproveitadas por ordem do dono (a PROCEDENCIA declara). Depois de gravar H1+H2 em
+  evals/heldout_blind.jsonl: `python scripts/import_heldout_humano.py docs/kit/heldout_humano.json` e
+  `python -m pytest -q -rf tests/test_router_contamination.py`, tudo no MESMO commit do held-out. Nunca edite as
+  perguntas delas; contaminação se corrige no TREINO.
+- ATENDIMENTO HUMANO (passo 3b): docs/kit/HITL_HUMANO.md (pessoa:Matheus, caso T-c3c50f62, 05/11 de manhã). Copie
+  para docs/HITL_HUMANO.md no commit do held-out, como está. NÃO rode o hitl_humano.py no relógio.
+- SEM questionário: pule a página de rotulagem (passo 3: "siga sem página, declarado"). README/PROCEDENCIA dizem "juiz
+  não validado por pessoas nesta entrega; validação independente pelo juiz de outra família sobre todas as baterias".
+- 2º juiz de outra família: `[ -n "$JUDGE_API_KEY" ]` (nunca imprima a chave); passo 5, sobre TODAS as baterias.
+
+Enunciado (literal):
+# AI Hardcore Engineer - Multi-Agent Support System
+
+## Overview
+
+This challenge evaluates how you engineer software, grasp AI agent design, and package it into a reliable, containerized service. The goal is to build a multi-agent system whose agents cooperate to interpret user requests and produce useful responses.
+
+## The Task: Designing Your Agent Orchestration
+
+You will architect and implement an Agent Orchestration composed of at least **three distinct agent types** that work together to handle incoming user messages.
+
+## Core Requirements
+
+<img width="721" height="459" alt="Screenshot 2025-11-21 at 10 31 26" src="https://github.com/user-attachments/assets/9d7c0d41-e2fe-4fe8-ab54-3204f70d0f87" />
+
+### 1. Agent Orchestration Architecture
+
+Implement at least **three distinct agent types**, plus a clear communication mechanism between them (e.g., direct function calls, internal message queue, or event-driven).
+
+- **Agent 1 — Router Agent:**
+  - Serves as the primary entry point for user messages.
+  - Analyzes each message and decides which specialized agent (or sequence of agents) should handle it, managing the workflow and data flow between agents.
+- **Agent 2 — Knowledge Agent:**
+  - Handles queries that require information retrieval (internal/external) and generation, answering questions about Getnet's products and services grounded in the company's website [Getnet | Máquinas de cartão e soluções financeiras para o seu negócio](https://www.getnet.net/).
+  - Uses a Retrieval Augmented Generation (RAG) approach plus a web search tool for general-purpose questions.
+  - Suggested data source for the knowledge base (please, look for other sources):
+    - https://www.getnet.net/en
+- **Agent 3 — Customer Support Agent:**
+  - Provides customer support by retrieving relevant user data to resolve inquiries.
+  - Must create at least **2 tools**.
+
+### 2. API Endpoint
+
+Expose an HTTP endpoint (e.g., FastAPI) that accepts `POST` requests and returns a meaningful JSON response. Expected payload:
+
+```json
+{
+  "message": "Your query or statement here",
+  "user_id": "some_user_identifier"
+}
+```
+
+### 3. Dockerization
+
+Provide a Dockerfile (and docker-compose.yml if needed) so the application builds and runs with standard Docker commands.
+
+### 4. Testing
+
+Describe your overall testing strategy and how you would approach comprehensive integration testing for the agent orchestration.
+
+### 5. Language & Frameworks
+
+Use any language (Python or Node.js/TypeScript are common), choosing suitable libraries for the API, agents, and RAG pipeline (e.g., Langchain, LlamaIndex).
+
+## What We're Looking For
+
+Clean, modular, maintainable code with a well-explained multi-agent design, high-quality prompts, and a functional RAG pipeline that ingests the specified URLs. We also value solid problem solving, effective tests, an easy-to-use Docker setup, and a comprehensive README.md. We also value thoughtful approaches to AI evaluation, observability, reliability, guardrails, and production monitoring.
+
+### README.md must cover:
+
+- How to build, configure, and run the application, and how to run the tests.
+- The orchestration architecture, design choices, message workflow, RAG pipeline (ingestion → storage → retrieval → generation), and how you leveraged LLM tools.
+
+## Submission
+
+Provide a link to a GitHub repository containing your solution, with a comprehensive README.md. Include a video walking the evaluators through your solution path (your reasoning, architecture decisions, and how the orchestration works).
+
+## Bonus Challenges
+
+Enhance the solution with one or more of the following capabilities:
+
+- Add a fourth custom agent of your choice, such as a Human Escalation Agent or Teams Agent that requests assistance from a human operator.
+- Implement guardrails to detect and handle unsafe, irrelevant, sensitive, or unsupported requests.
+- Add a redirect or human handoff mechanism for situations in which the system cannot confidently resolve the user's request.
+- Present an evaluation and observability strategy for measuring the quality, reliability, and operational performance of the multi-agent system.
+
+Candidates may also describe or implement dashboards, traces, structured logs, automated evaluation datasets, regression tests, or alerting mechanisms used to monitor the system in production.
+
+## Example Test Scenarios
+
+```json
+{ "message": "What's the difference between the Get Clássica and the Get Smart?", "user_id": "cliente1988" }
+```
+
+```json
+{ "message": "What's the weather forecast in Porto Alegre tomorrow?", "user_id": "cliente1988" }
+```
+
+```json
+{ "message": "When will the money from yesterday's sales be deposited?", "user_id": "cliente1988" }
+```
+
+```json
+{ "message": "Do I need a bank account to receive my sales via Pix?", "user_id": "cliente1988" }
+```
+
+```json
+{ "message": "My card machine won't connect to the internet, what should I do?", "user_id": "cliente1988" }
+```
+
+```json
+{ "message": "How does receivables advance (antecipação) work with Getnet?", "user_id": "cliente1988" }
+```
+
+```json
+{ "message": "What's the euro exchange rate today?", "user_id": "cliente1988" }
+```
+
+```json
+{ "message": "My card machine is showing a transaction decline error.", "user_id": "cliente1988" }
+```
+
+```json
+{ "message": "How many installments can I split a sale into with the crediário?", "user_id": "cliente1988" }
+```
+
+```json
+{ "message": "Can I sell through WhatsApp using the Payment Link?", "user_id": "cliente1988" }
+```
+
+
+Régua V4 (nomes e pesos oficiais): Business & Challenge Fit 8% · Agentic Reasoning & Orchestration 15% · Context,
+Knowledge & RAG 10% · Tool & Action Engineering 10% · Security & Identity 13% · Memory, State & Resilience 8% · Human
+Oversight & Risk Management 7% · Evaluation & Quality Engineering 14% · Observability, Reliability & Cost 6% ·
+Production Engineering 5% · Engineering Judgment 4%. Gates: Critical Security, Challenge Fit, Evidence, Semantic
+Quality. O AVALIADOR NÃO RODA NADA E NÃO ASSISTE AO VÍDEO: a prova tem de estar escrita e commitada, e do CÓDIGO FINAL
+(o ensaio 13 perdeu nota por evidência de 3 commits diferentes e por relatório vermelho commitado).
+
+O que o domínio montado muda: corpus, CRM, casos, gold, prompts, regras, ferramentas, testes e docs do domínio já estão
+prontos e a PROCEDENCIA declara a origem. NÃO estão (e você escreve/mede de novo, às cegas): held-out (H1+H2), perguntas
+reais (P), rótulos humanos, todos os resultados, DEMO, FAILURE_MODES, TIMESHEET, RESULTS. Não há SPEC, K, R, T, Q nem D
+neste modo. Não mexa em caso, regex de fato ou gate para passar.
+
+Passos (horários do PLAYBOOK §2.4; eval, gate e check SEMPRE em 2º plano rastreado, Bash run_in_background):
+1. T+0, scaffold (SEM pip antes do commit; o pip já vem no ambiente, A10):
+     git fetch origin kit-fonte && git archive origin/kit-fonte | tar -x -C .   # NUNCA `git checkout … -- .`: a trava recusa
+     mkdir -p docs var && python3 scripts/kit_history.py
+     git rm -r -q --cached docs/kit 2>/dev/null; echo docs/kit/ >> .git/info/exclude   # fica no disco, fora do repo
+     python3 docs/kit/tools/dominio.py mount
+     git add -A && git commit -m "chore: scaffold from entregar-desafio-cronometrado kit v5.7.0 (dominio montado)"
+     push com retry: for i in 1 2 3 4; do git push origin main && break; sleep 2; done
+   Sempre, logo depois do push (< 1 s; o script do ambiente, docs/kit/SETUP_AMBIENTE.sh, não tem o app):
+     uv pip install --system -q --no-deps -e .
+   Se `python -c "import fastembed, onnxruntime, fastapi, pytest"` falhar (script do ambiente não rodou): em 2º plano e SOZINHO (nada encadeado depois):
+     uv pip install --system -q -r requirements-dev.lock -r requirements-hybrid.lock > var/pip.log 2>&1 && uv pip install --system -q --no-deps -e . >> var/pip.log 2>&1
+     (uv, não pip: o mesmo lock resolve em < 1 s; o pip levou ~10 min no ensaio 13 e de novo no 14)
+   `git tag clock-start` LOCAL (push de tag o proxy derruba; não espere).
+2. T+0→T+5, tudo em 2º plano rastreado, sem esperar um pelo outro (pré-voo, eval aquecido e autores cegos):
+     python scripts/preflight.py --mounted > var/preflight.log 2>&1      # não recria o domínio; PARE e avise se reprovar
+     python -m evals.run_evals --out var/warm.json > var/warm.log 2>&1    # eval aquecido (índice + cache da busca)
+   (o hook de parada pede commit das remoções do pré-voo: elas vão no commit do pré-voo; ignore até ele passar)
+   e os autores cegos (Sonnet, subagentes, só escrevem JSONL; grave sem ler as frases): H1 e H2 (40 casos cada, 2
+   autores) → evals/heldout_blind.jsonl, mais o H3 escrito por pessoas se a maestra o entregar no T+0 (PLAYBOOK A7c); P (40 perguntas reais com link) → evals/real_questions.jsonl. Escritos DE
+   NOVO: nunca reaproveite os da tentativa anterior. Commits "heldout" e "real". Logo após o commit do held-out:
+   `python -m pytest -q -rf tests/test_router_contamination.py` (~2 s): exemplo do k-NN ou regra que copia um caso
+   cego sai do TREINO (arquivo:linha do erro), NUNCA o caso cego (ensaio geral final: H1-03 igual a um exemplo do
+   domínio montado reprovou o pré-voo no T+6).
+   SEM FUMAÇA no relógio: ela só existia para dar respostas julgadas à página de rotulagem, que saiu do relógio
+   (passo 3); a rodada 1 (passo 5) já mede oficiais e memória. Medido na produção da rodada 17: fumaça, eval
+   aquecido e Docker disputaram 4 núcleos e o gate só ficou verde no T+23. Um job pesado por vez.
+
+3. ROTULAGEM HUMANA FORA DO RELÓGIO (decisão do dono, 05/11: 20 situações lendo fontes com pressa não cabem em 60 min
+   e deixaram passar as adulteradas). As pessoas rotulam com calma no ENSAIO, sobre respostas do mesmo motor e domínio
+   (~30 reais + 10 adulteradas, conferência número a número). A maestra entrega no T+0, no commit do held-out:
+   `evals/validation/<página>.json` (textos congelados com o veredito do juiz), `evals/human_labels.*.csv`,
+   `evals/human_consensus.json` e `evals/human_divergences.md`. No relógio, sem pessoa nenhuma, logo depois do pré-voo (só chamadas ao juiz, sem CPU):
+     LLM_PROVIDER=anthropic python -m evals.judge --validation --max-usd 1.2          # o juiz de HOJE (prompt_sha) na mesma página
+     python -m evals.judge --cross --validation --max-usd 1.2                        # o 2º juiz, de outra família (se houver a chave)
+     python -m evals.label --report && python -m evals.label --divergences
+   A PROCEDENCIA declara: rótulos humanos feitos antes do relógio, sobre respostas do ensaio (sha da página), e o juiz
+   do relógio julgando o mesmo texto com o prompt conferido pelo `prompt_sha`. Sem rótulos do ensaio: siga sem página,
+   declarado ("juiz não validado por pessoas nesta entrega"); NUNCA monte a página de 20 itens no relógio.
+   RODADA 18 (ordem do dono, 05/11, noite): SEM questionário nenhum, nem antes nem no relógio. A rotulagem da r17
+   (feita com pressa, conferência número a número) não entra. A validação independente é o juiz de outra família
+   sobre TODAS as baterias (passo 5), e a PROCEDENCIA e o README dizem isso.
+3b. ATENDIMENTO HUMANO DE VERDADE FORA DO RELÓGIO (como a rotulagem). No ENSAIO, com o domínio montado e a chave do
+   LLM, a maestra roda em 2º plano
+     LLM_PROVIDER=anthropic python scripts/hitl_humano.py --nome <pessoa> --host 0.0.0.0 --porta 8765
+   e mostra a porta ao dono (prévia do app: report_preview_port 8765), com a chave pessoal que o script imprime. O dono
+   abre /operator, cola a chave, carrega a fila e responde o caso com as palavras dele. O script só grava
+   docs/HITL_HUMANO.md se a auditoria registrou a resposta com o nome da pessoa e o assistente retomou a conversa
+   (saída 2 = nada gravado). A maestra entrega o arquivo no T+0, junto dos rótulos, e a PROCEDENCIA declara:
+   atendimento humano feito antes do relógio, com o commit do ensaio que está no arquivo. Sem o arquivo, siga
+   declarando "humano simulado no eval (operator_sim)".
+   RODADA 18 (ordem do dono): NENHUMA pessoa no relógio. A maestra entrega no T+0 o docs/HITL_HUMANO.md da manhã de
+   05/11 (pessoa:Matheus respondeu o caso T-c3c50f62 pelo /operator, commit d89ece1 no arquivo); ele entra no commit
+   do held-out como está, e a PROCEDENCIA declara: atendimento humano feito antes do relógio, no commit citado.
+4. T+5→T+11, GATE OFFLINE em 2º plano, UM comando: `make gate > var/gate.log 2>&1`. Na ordem: calibração do portão
+   (`--calibrate-gate --apply`) e commit só dela; BUSCADOR MEDIDO NO DOMÍNIO, offline, ~2 min com o cache do eval
+   aquecido (`--choose-retriever --fast --keep-default --apply`) e commit só de `data/retriever.json` e do comparativo
+   (o README cita os dois); `make eval` e `python scripts/official_check.py`; commit do resultado. Para no 1º vermelho
+   (leia o fim de var/gate.log) e termina com "GATE COMMITADO <sha>": mande essa linha à maestra.
+   Por quê: com a calibração sem commit, o `make eval` gravou um latest.json que o ao vivo recusou (ensaio 14, ~5 min);
+   `--keep-default` mantém o buscador do kit (com a máquina carregada, o p95 do cross-encoder passa do orçamento e o
+   `--apply` puro o trocaria antes da rodada 1). Correção do domínio feita em paralelo: commite-a antes do `make gate`
+   (árvore suja em src/, data/ ou evals/ faz o `make eval` recusar, com a lista). O `check.py` NÃO roda aqui: a CI que
+   a maestra dispara no commit do gate roda o mesmo check em 6 partes (o local pesava 152 s e ~3 GB antes da rodada
+   1); ele volta no `make deliver`. Gate ≥ 90% NUNCA é cortado; o live_eval recusa gate vermelho/velho. Cada oficial
+   reprovado na rodada 1: a causa (fonte, portão, idioma) corrigida no domínio, com teste (passo 6).
+5. T+11→T+23 (só depois do gate verde do passo 4: o ao vivo recusa gate velho), RODADA 1 integral, em 2º plano rastreado, SÓ com nada pesado rodando (eval aquecido e imagem
+   terminados: OOM no ensaio v5.4): `scripts/live_eval.sh --max-usd 20` (official e memory repeat 3, o resto 1; o juiz
+   roda SEM teto e julga cada split ao terminar). Leia a 1ª linha do log: `AVISO: teto` = suba o teto. A ablação do
+   replan roda junto: `python -m evals.run_evals --live --ablate-replan --mode no_needs --split dependent --repeat 1 --max-usd 1 --out evals/results/ablation_replan_no_needs_dependent_live.json`.
+   Espere com Monitor (o `until` vai DENTRO do Monitor), nunca em 1º plano. Split com status ≠ complete: rode SÓ ele de novo.
+   Junto, em 2º plano, as provas que respondem aos descontos do avaliador (cada uma grava um arquivo em evals/results/;
+   commit de cada uma quando terminar):
+     python -m evals.run_evals --live --ablate-replan --mode no_needs --split heldout --repeat 1 --max-usd 2 --out evals/results/ablation_replan_no_needs_heldout_live.json
+       (ganho do replanejamento em casos que ninguém escreveu para ele; o README mostra só onde a ferramenta achou algo)
+     python -m evals.run_evals --live --split official --repeat 1 --workers 1 --max-usd 0.5 --out evals/results/latency_solo.json
+       (latência de UMA conversa por vez, ao lado da medida sob a carga do eval)
+   Com a chave do juiz de outra família no ambiente (`[ -n "$JUDGE_API_KEY" ]`; nunca mostre o valor), depois do juiz
+   da rodada 1 e do held-out e das reais commitados:
+     python -m evals.judge --cross evals/results/live_*.json --max-usd 15
+     for i in 1 2 3; do python -c "import json,sys; sys.exit(json.load(open('evals/results/judge_cross.json'))['status'].startswith('aborted'))" && break; python -m evals.judge --cross --resume evals/results/live_*.json --max-usd 15; done
+       (TODAS as baterias: medido em 05/11, 320 respostas em ~10 min com 8 em paralelo, US$ 13,4; a conexão com a
+       OpenAI caiu 2 vezes no meio: o --resume continua de onde parou. Roda em 2º plano, espera rede, não CPU.)
+     python -m evals.judge_agree                                   # concordância dos dois juízes + divergências
+     python -m evals.retrieval_cross --max-usd 1   # busca num gold que o time não escreveu
+   Sem a chave: siga sem elas, declarado ("juiz de outra família: não rodado").
+6. T+23→T+26: `python -m evals.failure_modes` e cada reprovação do juiz CASO A CASO (`reason`, `failure_type`): corrija a
+   CAUSA no domínio (corpus, tool, regra, cartão de capacidades), com teste e o caso no texto do commit. Nunca prompt
+   genérico. Um split por vez ao verificar.
+7. T+26→T+34, RODADA 2 só dos splits afetados (o pedido ao LLM mudou; PLAYBOOK §3.x): `cp evals/results/judge.json
+   evals/results/judge_r1.json`; official e memory --repeat 3, os outros que caíram --repeat 1, com o juiz; depois
+   `python -m evals.judge_diff evals/results/judge_r1.json evals/results/judge.json` (antes × depois no código FINAL).
+   Corte T+36: só a rodada 1, declarado (o README já sai com a rodada 1 no T+32 e se atualiza com a 2).
+8. T+30, em 2º plano e fora do caminho crítico, só DEPOIS da rodada 1 terminar: `scripts/docker_proof.sh > var/docker_proof.log 2>&1` (sobe o Docker, constrói, testa e grava docs/DOCKER.md; commit junto do próximo) e `make video`. Nunca o Docker junto do gate ou da rodada 1: na produção da rodada 17 os três disputaram 4 núcleos e a fumaça ficou 8 min sem processar um caso. Corte T+40: sem vídeo e sem link de vídeo no README.
+9. T+32→T+37: README e docs com os números novos. Os textos do domínio já vêm prontos: REVISE só o que cita número ou
+   resultado (nenhum número digitado à mão fora dos blocos gerados; `fill_readme`). Preencha à mão SÓ os `{{...}}`
+   restantes (§0 leitura do placar, §5, §7: cada métrica abaixo da referência com mecanismo, número e custo de corrigir;
+   cada corte com a causa). Merge de fix/rotulos e fix/analise (mensagem sem "maestra").
+   A prova de imagem e escala no ambiente de construção é o docs/DOCKER.md do `scripts/docker_proof.sh` (passo 8: o
+   Docker da nuvem vem PARADO e o script o sobe; antes o passo era pulado em silêncio e o avaliador registrou "Docker não
+   rodou no ambiente de construção"); a CI refaz o mesmo nas 6 partes do `check`.
+   Commit de tudo que não é README (evals/cassettes/ inclusive). DEMO, TIMESHEET e a mensagem de entrega saem
+   do `make deliver` (passo 10), dos resultados finais, e ele refaz o FAILURE_MODES do passo 6: não os gere à mão.
+10. T+36: a maestra grava docs/CI.md da execução da CI do último commit de código (`python scripts/ci_summary.py
+    var/ci_run.json`, com o JSON da run e dos jobs que ela lê pela ferramenta do GitHub) e manda; commit dele antes do
+    README (o avaliador "não acessou o Actions").
+    T+37: a maestra revisa o rascunho do README (empurre-o para o ramo `draft/readme`, que a CI ignora; o main só
+    recebe o README no `make deliver`; o docs/DEMO.md sai nele) e manda as frases sem número/prova, caminhos que não
+    existem e jargão de processo. T+38→T+40: aplique; `git tag clock-end` (local); `make deliver`: DEMO dos oficiais
+    (commit só dele) e `scripts/final.sh` (FAILURE_MODES, TIMESHEET, mensagem de entrega, README sozinho no último
+    commit, push com retry). Commit de código depois do T+37 só com `python scripts/check.py` verde ANTES.
+11. T+40→T+50: CI do último commit. Verde: pare. Vermelha: revert do último commit de código e `make deliver` de novo.
+    T+50→T+58 é FOLGA: nada novo começa. NADA depois de T+58 (teto absoluto do dono: 60 min).
+12. Mande ao dono: o placar inteiro (bons e ruins), o texto de var/ENTREGA_final.md (gerado DEPOIS do último commit),
+    links do repo, da CI e do vídeo, os cortes que valeram e a nota esperada por critério com o motivo.
+
+Cortes (em ordem; cada um vira uma linha em README §7 com a causa): rodada 2 → vídeo → consenso (docker/scale não é corte: a CI prova). O gate
+offline e o juiz nunca são cortados. Rotulagem: se ninguém marcar até T+20, siga com "1 rotulador"/"sem consenso" declarado.
+
+Armadilhas já pagas (LICOES_V4.md, POSMORTEM_V5.md, ensaio 13): `git checkout … -- .` recusado pela trava (use git
+archive); pip de ~530 pacotes encadeado ao commit atrasou o T0 em ~11 min; NUNCA `cmd | tail && git commit` (o pipe
+engole o código de saída: use a forma com rc); quatro splits em série junto do eval aquecido atrasam tudo (um split por
+vez); cada push dispara a CI (junte commits); push de teste do pré-voo cria ramo que o proxy não apaga (o pré-voo usa
+--dry-run); evidência ao vivo de 3 SHAs diferentes e relatório vermelho commitado derrubam a nota; juiz sem o texto das
+fontes reprova o que é verdade (confira `saw_context`); manchete de oficiais inflada por regex frouxa ou por abstenção
+contada como resolvida; título de commit com `{{` deixa a CI vermelha; README misturado com outro arquivo (make deliver);
+`pkill -f` mata o próprio shell; hora "de cabeça" adiantada.
+
+Regras que você não quebra: NENHUMA espera em 1º plano (`until`/`sleep` ou comando longo sem
+run_in_background): toda espera é Bash run_in_background ou Monitor (ensaio 14: 4 min travada num `until`, sem
+ler mensagens nem dar push; a maestra interrompe espera em 1º plano de mais de 60 s); nunca encerre o turno
+com trabalho em 2º plano que o harness não acompanha; motor congelado
+(exceção: bug do ao vivo, com teste); gate nunca desce; held-out e perguntas reais cegos e escritos de novo; número só
+via fill_readme; nada de exemplo no produto; nenhuma resposta pronta no código; comentário só com número medido; a
+mensagem de entrega sai com os números ruins, os cortes e a procedência (o domínio veio montado: declarado na
+PROCEDENCIA). Gasto: pare se a API passar de US$ 30.
