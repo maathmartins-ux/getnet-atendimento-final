@@ -1,0 +1,1575 @@
+{
+  "juiz": {
+    "model": "gpt-5",
+    "provider": "openai_compat"
+  },
+  "pool": 10,
+  "status": "complete",
+  "sem_rotulo": [],
+  "spent_usd": 0.4064,
+  "perguntas": 77,
+  "com_trecho_util": 55,
+  "sem_trecho_util": 22,
+  "hit@3": 0.891,
+  "hit@5": 0.982,
+  "mrr@10": 0.841,
+  "por_split": {
+    "heldout": {
+      "perguntas": 37,
+      "com_trecho_util": 29,
+      "sem_trecho_util": 8,
+      "hit@3": 0.897,
+      "hit@5": 1.0,
+      "mrr@10": 0.816
+    },
+    "real": {
+      "perguntas": 40,
+      "com_trecho_util": 26,
+      "sem_trecho_util": 14,
+      "hit@3": 0.885,
+      "hit@5": 0.962,
+      "mrr@10": 0.87
+    }
+  },
+  "linhas": [
+    {
+      "id": "real-01",
+      "split": "real",
+      "message": "Como fazer pré-autorização na maquininha da Getnet?",
+      "relevant": [
+        1,
+        3
+      ],
+      "ids": [
+        "sup-duvidas-88",
+        "prod-get-smart-05",
+        "sup-duvidas-87",
+        "prod-get-smart-06",
+        "prod-get-tap-06",
+        "prod-todas-maquininhas-04",
+        "sup-operacional-12",
+        "prod-crediario-08",
+        "sup-get-smart-04",
+        "prod-todas-maquininhas-02"
+      ]
+    },
+    {
+      "id": "real-02",
+      "split": "real",
+      "message": "Como fazer estorno de uma venda na máquina da Getnet?",
+      "relevant": [
+        1,
+        2,
+        3
+      ],
+      "ids": [
+        "sup-operacional-10",
+        "sup-operacional-11",
+        "sup-get-smart-01",
+        "sup-get-smart-02",
+        "prod-crediario-04",
+        "sup-duvidas-65",
+        "prod-get-tap-06",
+        "sup-duvidas-72",
+        "prod-crediario-06",
+        "prod-todas-maquininhas-04"
+      ]
+    },
+    {
+      "id": "real-03",
+      "split": "real",
+      "message": "Como fazer uma venda digitada na máquina da Getnet?",
+      "relevant": [
+        1
+      ],
+      "ids": [
+        "sup-duvidas-72",
+        "sup-operacional-11",
+        "prod-get-tap-06",
+        "prod-crediario-06",
+        "sup-configuracoes-maquininha-02",
+        "prod-crediario-04",
+        "sup-operacional-12",
+        "sup-duvidas-97",
+        "prod-get-tap-01",
+        "prod-todas-maquininhas-04"
+      ]
+    },
+    {
+      "id": "real-04",
+      "split": "real",
+      "message": "O que significa getnet 402 deny?",
+      "relevant": [],
+      "ids": []
+    },
+    {
+      "id": "real-05",
+      "split": "real",
+      "message": "Como posso cancelar a minha conta na Getnet?",
+      "relevant": [
+        1
+      ],
+      "ids": [
+        "sup-get-conta-13",
+        "sup-duvidas-23",
+        "sup-pix-mais-respostas-09",
+        "sup-get-smart-01",
+        "sup-get-conta-15",
+        "sup-duvidas-33",
+        "prod-crediario-08",
+        "prod-crediario-05",
+        "sup-taxas-17",
+        "sup-link-de-pagamento-05"
+      ]
+    },
+    {
+      "id": "real-06",
+      "split": "real",
+      "message": "Pedi antecipação e o valor não caiu na conta, o que aconteceu?",
+      "relevant": [
+        1,
+        2,
+        4,
+        10
+      ],
+      "ids": [
+        "sup-antecipacao-de-vendas-07",
+        "sup-antecipacao-de-vendas-06",
+        "sup-duvidas-12",
+        "sup-link-de-pagamento-12",
+        "prod-todas-maquininhas-08",
+        "sup-duvidas-113",
+        "prod-get-smart-08",
+        "sup-taxas-17",
+        "prod-crediario-01",
+        "sup-get-conta-09"
+      ]
+    },
+    {
+      "id": "real-07",
+      "split": "real",
+      "message": "O dinheiro das minhas vendas no cartão não caiu na conta, por quê?",
+      "relevant": [
+        1,
+        3,
+        4,
+        7
+      ],
+      "ids": [
+        "sup-duvidas-114",
+        "sup-duvidas-115",
+        "sup-antecipacao-de-vendas-06",
+        "sup-get-conta-09",
+        "sup-get-conta-10",
+        "prod-todas-maquininhas-08",
+        "sup-antecipacao-de-vendas-07",
+        "prod-get-smart-08",
+        "sup-taxas-17",
+        "prod-get-tap-06"
+      ]
+    },
+    {
+      "id": "real-08",
+      "split": "real",
+      "message": "Por que a Getnet bloqueou o dinheiro na minha conta?",
+      "relevant": [
+        1,
+        7
+      ],
+      "ids": [
+        "sup-link-de-pagamento-12",
+        "sup-duvidas-33",
+        "prod-get-smart-08",
+        "sup-get-conta-02",
+        "sup-duvidas-23",
+        "prod-get-tap-06",
+        "sup-pix-mais-respostas-24",
+        "prod-todas-maquininhas-08",
+        "sup-link-de-pagamento-05",
+        "sup-get-conta-15"
+      ]
+    },
+    {
+      "id": "real-09",
+      "split": "real",
+      "message": "O que é a reserva financeira e por que estão retendo parte das minhas vendas?",
+      "relevant": [],
+      "ids": []
+    },
+    {
+      "id": "real-10",
+      "split": "real",
+      "message": "Um Pix que recebi foi bloqueado. Como libero ou estorno?",
+      "relevant": [
+        1,
+        2
+      ],
+      "ids": [
+        "sup-pix-mais-respostas-22",
+        "sup-pix-mais-respostas-24",
+        "sup-duvidas-57",
+        "sup-pix-08",
+        "sup-duvidas-82",
+        "sup-pix-09",
+        "prod-pix-04",
+        "sup-get-conta-02",
+        "prod-pix-01",
+        "sup-link-de-pagamento-12"
+      ]
+    },
+    {
+      "id": "real-11",
+      "split": "real",
+      "message": "Meu saldo está bloqueado, quando vai ser liberado?",
+      "relevant": [
+        1,
+        2
+      ],
+      "ids": [
+        "sup-pix-mais-respostas-22",
+        "sup-pix-mais-respostas-24",
+        "sup-get-conta-09",
+        "sup-duvidas-91",
+        "sup-duvidas-37",
+        "sup-get-conta-15",
+        "sup-link-de-pagamento-12",
+        "sup-antecipacao-de-vendas-11",
+        "sup-antecipacao-de-vendas-10",
+        "prod-get-smart-08"
+      ]
+    },
+    {
+      "id": "real-12",
+      "split": "real",
+      "message": "O cliente pagou pelo link de pagamento e eu não recebi. Em quanto tempo cai?",
+      "relevant": [
+        1,
+        3
+      ],
+      "ids": [
+        "sup-link-de-pagamento-12",
+        "sup-duvidas-50",
+        "sup-duvidas-49",
+        "sup-link-de-pagamento-05",
+        "sup-pix-mais-respostas-24",
+        "prod-link-de-pagamento-03",
+        "sup-taxas-04",
+        "prod-link-de-pagamento-01",
+        "sup-pix-mais-respostas-22",
+        "prod-crediario-02"
+      ]
+    },
+    {
+      "id": "real-13",
+      "split": "real",
+      "message": "Por que minha antecipação de recebíveis está bloqueada?",
+      "relevant": [
+        4
+      ],
+      "ids": [
+        "sup-antecipacao-de-vendas-08",
+        "sup-antecipacao-de-vendas-07",
+        "sup-duvidas-12",
+        "sup-link-de-pagamento-12",
+        "sup-duvidas-26",
+        "prod-todas-maquininhas-08",
+        "sup-pix-mais-respostas-24",
+        "sup-pix-mais-respostas-22",
+        "sup-get-conta-10",
+        "prod-conta-digital-01"
+      ]
+    },
+    {
+      "id": "real-14",
+      "split": "real",
+      "message": "Meu Pix aparece inativo na maquininha. Como ativar?",
+      "relevant": [
+        1
+      ],
+      "ids": [
+        "sup-pix-09",
+        "sup-pix-08",
+        "sup-duvidas-82",
+        "sup-duvidas-05",
+        "sup-pix-mais-respostas-18",
+        "sup-pix-mais-respostas-26",
+        "prod-todas-maquininhas-02",
+        "prod-pix-01",
+        "prod-todas-maquininhas-04",
+        "prod-get-smart-05"
+      ]
+    },
+    {
+      "id": "real-15",
+      "split": "real",
+      "message": "Cobraram taxa de chargeback mesmo depois do estorno automático. Isso está certo?",
+      "relevant": [],
+      "ids": [
+        "sup-operacional-03",
+        "sup-get-smart-02",
+        "sup-duvidas-66",
+        "sup-taxas-18",
+        "prod-todas-maquininhas-08",
+        "sup-pix-mais-respostas-24",
+        "sup-duvidas-100",
+        "prod-get-smart-05",
+        "sup-taxas-17",
+        "prod-todas-maquininhas-03"
+      ]
+    },
+    {
+      "id": "real-16",
+      "split": "real",
+      "message": "Por que bloquearam um pagamento que recebi, alegando suspeita?",
+      "relevant": [
+        1,
+        2
+      ],
+      "ids": [
+        "sup-pix-mais-respostas-22",
+        "sup-pix-mais-respostas-24",
+        "sup-link-de-pagamento-12",
+        "sup-duvidas-68",
+        "sup-duvidas-67",
+        "sup-antecipacao-de-vendas-06",
+        "sup-operacional-04",
+        "sup-link-de-pagamento-06",
+        "sup-antecipacao-de-vendas-05",
+        "sup-operacional-03"
+      ]
+    },
+    {
+      "id": "real-17",
+      "split": "real",
+      "message": "Como cancelo uma venda feita por link? Pedem taxa antes de estornar.",
+      "relevant": [],
+      "ids": [
+        "sup-link-de-pagamento-12",
+        "sup-get-smart-01",
+        "sup-duvidas-01",
+        "sup-operacional-10",
+        "prod-link-de-pagamento-03",
+        "sup-pix-mais-respostas-20",
+        "sup-get-smart-02",
+        "sup-link-de-pagamento-08",
+        "sup-duvidas-65",
+        "sup-operacional-04"
+      ]
+    },
+    {
+      "id": "real-18",
+      "split": "real",
+      "message": "Quem é responsável pelo chargeback, eu ou a Getnet?",
+      "relevant": [
+        2
+      ],
+      "ids": [
+        "sup-operacional-03",
+        "sup-duvidas-66",
+        "sup-duvidas-65",
+        "sup-link-de-pagamento-05",
+        "sup-operacional-01",
+        "prod-link-de-pagamento-01",
+        "sup-link-de-pagamento-12",
+        "prod-crediario-08",
+        "sup-get-smart-14",
+        "sup-get-smart-12"
+      ]
+    },
+    {
+      "id": "real-19",
+      "split": "real",
+      "message": "Vender por link de pagamento é seguro? Tem risco de bloqueio do valor?",
+      "relevant": [
+        1,
+        2,
+        3,
+        7,
+        8
+      ],
+      "ids": [
+        "sup-link-de-pagamento-12",
+        "prod-link-de-pagamento-02",
+        "prod-link-de-pagamento-01",
+        "sup-link-de-pagamento-06",
+        "sup-duvidas-51",
+        "sup-duvidas-50",
+        "sup-pix-mais-respostas-22",
+        "sup-pix-mais-respostas-24",
+        "sup-operacional-12",
+        "prod-crediario-04"
+      ]
+    },
+    {
+      "id": "real-20",
+      "split": "real",
+      "message": "Retiraram valores da minha conta Getnet sem aviso. Por quê?",
+      "relevant": [
+        2,
+        6,
+        10
+      ],
+      "ids": [
+        "sup-duvidas-23",
+        "sup-get-conta-15",
+        "prod-get-smart-08",
+        "prod-get-tap-06",
+        "prod-todas-maquininhas-08",
+        "sup-get-conta-14",
+        "sup-duvidas-33",
+        "sup-antecipacao-de-vendas-06",
+        "sup-taxas-17",
+        "sup-pix-mais-respostas-24"
+      ]
+    },
+    {
+      "id": "real-21",
+      "split": "real",
+      "message": "Meu saldo de vendas online está retido há mais de 120 dias após cancelamentos. O que faço?",
+      "relevant": [],
+      "ids": [
+        "sup-get-smart-01",
+        "sup-pix-mais-respostas-20",
+        "sup-duvidas-50",
+        "sup-pix-mais-respostas-24",
+        "sup-operacional-10",
+        "sup-get-smart-02",
+        "sup-get-conta-15",
+        "sup-duvidas-89",
+        "sup-operacional-04",
+        "sup-antecipacao-de-vendas-08"
+      ]
+    },
+    {
+      "id": "real-22",
+      "split": "real",
+      "message": "A maquininha mostra erro de conexão com a operadora móvel. O que fazer?",
+      "relevant": [
+        5,
+        6
+      ],
+      "ids": [
+        "prod-todas-maquininhas-04",
+        "prod-todas-maquininhas-08",
+        "prod-get-smart-06",
+        "prod-get-smart-05",
+        "sup-duvidas-05",
+        "sup-erro-adq-1-84-01",
+        "sup-duvidas-86",
+        "sup-operacional-12",
+        "prod-get-tap-03",
+        "prod-get-tap-05"
+      ]
+    },
+    {
+      "id": "real-23",
+      "split": "real",
+      "message": "Minha maquininha Getnet não funciona. Como peço a troca?",
+      "relevant": [],
+      "ids": [
+        "prod-todas-maquininhas-04",
+        "prod-get-smart-06",
+        "prod-get-smart-05",
+        "prod-get-tap-06",
+        "prod-todas-maquininhas-01",
+        "prod-get-classica-01",
+        "sup-duvidas-94",
+        "sup-duvidas-48",
+        "sup-operacional-12",
+        "sup-configuracoes-maquininha-02"
+      ]
+    },
+    {
+      "id": "real-24",
+      "split": "real",
+      "message": "A máquina fica em \"iniciando conexão\" e não passa o cartão.",
+      "relevant": [],
+      "ids": []
+    },
+    {
+      "id": "real-25",
+      "split": "real",
+      "message": "Aparece o erro ADQ-4-G5 na maquininha. O que significa?",
+      "relevant": [],
+      "ids": [
+        "sup-erro-adq-1-87-01",
+        "sup-erro-adq-1-84-01",
+        "sup-duvidas-94",
+        "sup-erro-adq-1-19-01",
+        "prod-get-smart-05",
+        "prod-get-smart-06",
+        "prod-todas-maquininhas-08",
+        "prod-todas-maquininhas-04",
+        "sup-operacional-06",
+        "prod-get-classica-01"
+      ]
+    },
+    {
+      "id": "real-26",
+      "split": "real",
+      "message": "A maquininha não lê os cartões. Como solicito visita técnica?",
+      "relevant": [],
+      "ids": [
+        "prod-todas-maquininhas-04",
+        "prod-todas-maquininhas-08",
+        "sup-duvidas-94",
+        "prod-get-smart-06",
+        "prod-get-smart-05",
+        "prod-get-classica-01",
+        "sup-duvidas-05",
+        "sup-configuracoes-maquininha-01",
+        "sup-pix-08",
+        "prod-get-tap-06"
+      ]
+    },
+    {
+      "id": "real-27",
+      "split": "real",
+      "message": "Quanto tempo leva a troca de uma maquininha com defeito?",
+      "relevant": [],
+      "ids": [
+        "prod-todas-maquininhas-04",
+        "prod-get-smart-03",
+        "prod-todas-maquininhas-02",
+        "sup-duvidas-94",
+        "prod-get-smart-01",
+        "sup-operacional-06",
+        "prod-get-classica-01",
+        "prod-get-tap-05",
+        "sup-duvidas-86",
+        "sup-pix-mais-respostas-24"
+      ]
+    },
+    {
+      "id": "real-28",
+      "split": "real",
+      "message": "Qual é a garantia da maquininha? Se passar do prazo eles trocam?",
+      "relevant": [],
+      "ids": [
+        "prod-get-tap-05",
+        "prod-get-smart-05",
+        "prod-todas-maquininhas-04",
+        "prod-todas-maquininhas-08",
+        "sup-duvidas-94",
+        "sup-duvidas-85",
+        "prod-get-smart-01",
+        "prod-get-classica-01",
+        "sup-configuracoes-maquininha-01",
+        "prod-get-classica-02"
+      ]
+    },
+    {
+      "id": "real-29",
+      "split": "real",
+      "message": "Meu terminal veio sem chip. Como resolver?",
+      "relevant": [
+        1,
+        3
+      ],
+      "ids": [
+        "sup-duvidas-05",
+        "prod-get-smart-05",
+        "sup-configuracoes-maquininha-01",
+        "prod-get-smart-06",
+        "prod-get-tap-03",
+        "sup-pix-08",
+        "prod-todas-maquininhas-08",
+        "sup-duvidas-86",
+        "prod-todas-maquininhas-04",
+        "prod-get-tap-06"
+      ]
+    },
+    {
+      "id": "real-30",
+      "split": "real",
+      "message": "Como cancelo a maquininha? Não acho a opção no app nem no WhatsApp.",
+      "relevant": [],
+      "ids": [
+        "sup-duvidas-26",
+        "prod-todas-maquininhas-04",
+        "prod-todas-maquininhas-03",
+        "prod-get-tap-03",
+        "prod-get-smart-05",
+        "sup-duvidas-25",
+        "prod-crediario-08",
+        "sup-operacional-01",
+        "sup-pix-mais-respostas-20",
+        "prod-get-tap-06"
+      ]
+    },
+    {
+      "id": "real-31",
+      "split": "real",
+      "message": "Cancelei a maquininha e continuam cobrando aluguel. Como contestar?",
+      "relevant": [
+        1
+      ],
+      "ids": [
+        "sup-duvidas-25",
+        "sup-duvidas-24",
+        "prod-get-tap-05",
+        "prod-todas-maquininhas-04",
+        "prod-crediario-08",
+        "prod-todas-maquininhas-08",
+        "sup-pix-mais-respostas-24",
+        "sup-taxas-17",
+        "prod-get-tap-06",
+        "prod-get-smart-05"
+      ]
+    },
+    {
+      "id": "real-32",
+      "split": "real",
+      "message": "Como devolvo a maquininha para parar as cobranças?",
+      "relevant": [],
+      "ids": [
+        "sup-pix-mais-respostas-24",
+        "sup-pix-mais-respostas-23",
+        "sup-duvidas-65",
+        "prod-todas-maquininhas-04",
+        "sup-duvidas-94",
+        "sup-pix-08",
+        "prod-todas-maquininhas-02",
+        "sup-operacional-06",
+        "prod-get-smart-05",
+        "sup-operacional-01"
+      ]
+    },
+    {
+      "id": "real-33",
+      "split": "real",
+      "message": "Posso ser negativado por aluguel da maquininha depois de pedir o cancelamento?",
+      "relevant": [
+        1
+      ],
+      "ids": [
+        "sup-duvidas-25",
+        "sup-duvidas-26",
+        "sup-operacional-04",
+        "prod-get-tap-05",
+        "prod-todas-maquininhas-02",
+        "prod-todas-maquininhas-04",
+        "sup-taxas-17",
+        "prod-get-classica-01",
+        "prod-get-smart-05",
+        "sup-pix-mais-respostas-24"
+      ]
+    },
+    {
+      "id": "real-34",
+      "split": "real",
+      "message": "Como funciona a isenção de aluguel? Me disseram 2 meses grátis e cobraram.",
+      "relevant": [
+        1,
+        3,
+        4,
+        5,
+        8,
+        9
+      ],
+      "ids": [
+        "prod-get-tap-05",
+        "sup-duvidas-25",
+        "prod-get-tap-04",
+        "sup-duvidas-08",
+        "prod-get-classica-01",
+        "sup-get-conta-14",
+        "prod-crediario-02",
+        "prod-todas-maquininhas-03",
+        "prod-todas-maquininhas-02",
+        "sup-taxas-12"
+      ]
+    },
+    {
+      "id": "real-35",
+      "split": "real",
+      "message": "Por que estou sendo cobrado mensalidade na Getnet?",
+      "relevant": [
+        1,
+        2,
+        5,
+        6,
+        8
+      ],
+      "ids": [
+        "sup-taxas-19",
+        "sup-duvidas-55",
+        "sup-get-smart-12",
+        "sup-duvidas-93",
+        "prod-get-tap-02",
+        "sup-taxas-18",
+        "prod-get-tap-04",
+        "sup-get-conta-14",
+        "prod-todas-maquininhas-03",
+        "sup-get-conta-15"
+      ]
+    },
+    {
+      "id": "real-36",
+      "split": "real",
+      "message": "Não consigo ativar a maquininha. O que fazer?",
+      "relevant": [
+        1
+      ],
+      "ids": [
+        "prod-todas-maquininhas-04",
+        "prod-get-smart-05",
+        "prod-todas-maquininhas-08",
+        "prod-get-smart-06",
+        "sup-pix-09",
+        "sup-duvidas-94",
+        "sup-duvidas-31",
+        "sup-taxas-17",
+        "prod-crediario-08",
+        "sup-pix-08"
+      ]
+    },
+    {
+      "id": "real-37",
+      "split": "real",
+      "message": "Não consigo mais acessar meu app Getnet. O que faço?",
+      "relevant": [
+        1,
+        4
+      ],
+      "ids": [
+        "sup-duvidas-19",
+        "sup-get-smart-11",
+        "sup-duvidas-18",
+        "sup-get-conta-07",
+        "sup-get-conta-08",
+        "sup-pix-mais-respostas-10",
+        "prod-get-smart-05",
+        "sup-configuracoes-maquininha-02",
+        "sup-taxas-16",
+        "prod-get-tap-06"
+      ]
+    },
+    {
+      "id": "real-38",
+      "split": "real",
+      "message": "O e-mail para redefinir a senha do app Getnet não chega. Como recupero o acesso?",
+      "relevant": [
+        1
+      ],
+      "ids": [
+        "sup-duvidas-19",
+        "sup-duvidas-20",
+        "sup-get-conta-07",
+        "sup-pix-mais-respostas-10",
+        "sup-get-smart-11",
+        "sup-get-conta-08",
+        "prod-get-tap-06",
+        "sup-operacional-13",
+        "prod-get-smart-05",
+        "sup-pix-mais-respostas-23"
+      ]
+    },
+    {
+      "id": "real-39",
+      "split": "real",
+      "message": "Meu cadastro está pendente e não consigo vender no cartão. Quanto demora a vinculação do CNPJ?",
+      "relevant": [],
+      "ids": [
+        "sup-duvidas-114",
+        "prod-todas-maquininhas-01",
+        "sup-antecipacao-de-vendas-08",
+        "sup-pix-mais-respostas-24",
+        "sup-duvidas-50",
+        "sup-pix-mais-respostas-16",
+        "sup-antecipacao-de-vendas-13",
+        "prod-crediario-02",
+        "sup-taxas-04",
+        "sup-link-de-pagamento-12"
+      ]
+    },
+    {
+      "id": "real-40",
+      "split": "real",
+      "message": "A maquininha não faz Pix nem recarga de celular. Como resolver?",
+      "relevant": [
+        6
+      ],
+      "ids": [
+        "sup-pix-08",
+        "sup-pix-mais-respostas-26",
+        "sup-pix-mais-respostas-18",
+        "sup-duvidas-94",
+        "prod-todas-maquininhas-02",
+        "sup-pix-09",
+        "prod-get-smart-05",
+        "prod-get-tap-05",
+        "prod-todas-maquininhas-04",
+        "prod-get-smart-06"
+      ]
+    },
+    {
+      "id": "heldout-H1-01",
+      "split": "heldout",
+      "message": "Qual a taxa de débito da Get Clássica?",
+      "relevant": [
+        5
+      ],
+      "ids": [
+        "prod-todas-maquininhas-02",
+        "sup-taxas-04",
+        "prod-todas-maquininhas-03",
+        "sup-get-conta-14",
+        "prod-get-classica-01",
+        "sup-duvidas-102",
+        "prod-get-tap-02",
+        "sup-taxas-18",
+        "sup-duvidas-33",
+        "prod-taxas-01"
+      ]
+    },
+    {
+      "id": "heldout-H1-02",
+      "split": "heldout",
+      "message": "como funciona o Link de Pagamento? precisa de maquininha?",
+      "relevant": [
+        1,
+        3,
+        6
+      ],
+      "ids": [
+        "sup-link-de-pagamento-12",
+        "sup-link-de-pagamento-04",
+        "sup-link-de-pagamento-10",
+        "sup-duvidas-50",
+        "prod-link-de-pagamento-03",
+        "sup-link-de-pagamento-07",
+        "sup-duvidas-94",
+        "sup-duvidas-49",
+        "prod-get-smart-08",
+        "sup-pix-09"
+      ]
+    },
+    {
+      "id": "heldout-H1-03",
+      "split": "heldout",
+      "message": "Posso receber por Pix sem ter maquininha?",
+      "relevant": [
+        1,
+        6,
+        7,
+        9,
+        10
+      ],
+      "ids": [
+        "sup-duvidas-82",
+        "prod-todas-maquininhas-02",
+        "sup-duvidas-57",
+        "sup-pix-mais-respostas-18",
+        "sup-pix-08",
+        "prod-pix-01",
+        "sup-get-conta-02",
+        "prod-todas-maquininhas-05",
+        "sup-pix-09",
+        "sup-link-de-pagamento-10"
+      ]
+    },
+    {
+      "id": "heldout-H1-04",
+      "split": "heldout",
+      "message": "What is the Get Conta and does it have a monthly fee?",
+      "relevant": [
+        1,
+        2
+      ],
+      "ids": [
+        "sup-get-conta-02",
+        "sup-get-conta-14",
+        "prod-conta-digital-01",
+        "prod-get-classica-02",
+        "prod-get-smart-03",
+        "prod-get-smart-08",
+        "prod-get-tap-02",
+        "prod-get-tap-04",
+        "sup-pix-mais-respostas-18",
+        "sup-taxas-17"
+      ]
+    },
+    {
+      "id": "heldout-H1-05",
+      "split": "heldout",
+      "message": "quais bandeiras de cartao a Getnet aceita?",
+      "relevant": [
+        1,
+        2,
+        3,
+        7,
+        9
+      ],
+      "ids": [
+        "sup-get-smart-07",
+        "sup-duvidas-88",
+        "sup-configuracoes-maquininha-01",
+        "prod-todas-maquininhas-05",
+        "sup-duvidas-24",
+        "prod-todas-maquininhas-04",
+        "prod-crediario-08",
+        "prod-get-tap-03",
+        "sup-taxas-17",
+        "prod-get-classica-02"
+      ]
+    },
+    {
+      "id": "heldout-H1-06",
+      "split": "heldout",
+      "message": "Como faço pra contratar o crediário Getnet na minha loja?",
+      "relevant": [
+        1,
+        2,
+        3,
+        6
+      ],
+      "ids": [
+        "prod-crediario-08",
+        "sup-duvidas-33",
+        "sup-taxas-17",
+        "prod-crediario-06",
+        "sup-link-de-pagamento-05",
+        "sup-taxas-16",
+        "sup-duvidas-38",
+        "sup-parcelado-01",
+        "prod-todas-maquininhas-03",
+        "sup-get-conta-04"
+      ]
+    },
+    {
+      "id": "heldout-H1-07",
+      "split": "heldout",
+      "message": "Does the Get Smart accept contactless payments and Apple Pay?",
+      "relevant": [
+        1
+      ],
+      "ids": [
+        "sup-get-smart-07",
+        "sup-get-smart-10",
+        "prod-get-smart-07",
+        "sup-duvidas-05",
+        "prod-get-smart-08",
+        "prod-todas-maquininhas-08",
+        "sup-taxas-19",
+        "prod-todas-maquininhas-02",
+        "prod-get-classica-01",
+        "prod-get-tap-04"
+      ]
+    },
+    {
+      "id": "heldout-H1-08",
+      "split": "heldout",
+      "message": "Quanto tempo leva pra receber o dinheiro das vendas no crédito parcelado em 3x?",
+      "relevant": [
+        2,
+        4,
+        6,
+        7,
+        8
+      ],
+      "ids": [
+        "sup-duvidas-37",
+        "sup-duvidas-53",
+        "prod-crediario-02",
+        "sup-antecipacao-de-vendas-13",
+        "sup-taxas-04",
+        "sup-taxas-01",
+        "prod-get-smart-03",
+        "sup-parcelado-01",
+        "sup-get-conta-09",
+        "sup-link-de-pagamento-12"
+      ]
+    },
+    {
+      "id": "heldout-H1-09",
+      "split": "heldout",
+      "message": "A Getnet tem maquininha com impressora de cupom fiscal para food truck?",
+      "relevant": [
+        1,
+        6,
+        9
+      ],
+      "ids": [
+        "prod-get-smart-06",
+        "prod-get-smart-05",
+        "prod-get-classica-01",
+        "prod-todas-maquininhas-04",
+        "prod-todas-maquininhas-08",
+        "sup-get-smart-16",
+        "prod-get-tap-01",
+        "prod-get-tap-06",
+        "sup-get-smart-08",
+        "sup-configuracoes-maquininha-01"
+      ]
+    },
+    {
+      "id": "heldout-H1-10",
+      "split": "heldout",
+      "message": "Qual o CNPJ da diretora financeira da Getnet e o salário dela?",
+      "relevant": [],
+      "ids": [
+        "sup-duvidas-89",
+        "prod-get-smart-08",
+        "prod-get-smart-02",
+        "prod-link-de-pagamento-01",
+        "sup-duvidas-33",
+        "prod-get-tap-01",
+        "prod-get-classica-01",
+        "prod-get-tap-02",
+        "prod-todas-maquininhas-03",
+        "prod-todas-maquininhas-02"
+      ]
+    },
+    {
+      "id": "heldout-H1-11",
+      "split": "heldout",
+      "message": "Vocês aceitam pagamento em criptomoeda tipo bitcoin na maquininha e qual a taxa?",
+      "relevant": [],
+      "ids": [
+        "prod-todas-maquininhas-08",
+        "prod-todas-maquininhas-02",
+        "sup-configuracoes-maquininha-01",
+        "sup-duvidas-94",
+        "prod-get-smart-02",
+        "prod-get-classica-01",
+        "prod-taxas-01",
+        "prod-get-smart-05",
+        "sup-taxas-17",
+        "prod-crediario-08"
+      ]
+    },
+    {
+      "id": "heldout-H1-12",
+      "split": "heldout",
+      "message": "What is the exact fee for international cards on the Get Mini in Portugal in 2027?",
+      "relevant": [],
+      "ids": [
+        "prod-get-classica-02",
+        "prod-get-smart-03",
+        "prod-todas-maquininhas-02",
+        "prod-get-classica-01",
+        "prod-get-tap-02",
+        "prod-todas-maquininhas-05",
+        "sup-get-conta-14",
+        "prod-get-smart-08",
+        "sup-taxas-18",
+        "sup-taxas-12"
+      ]
+    },
+    {
+      "id": "heldout-H1-26",
+      "split": "heldout",
+      "message": "Quanto vendi ontem e como funciona a antecipação de recebíveis?",
+      "relevant": [
+        1,
+        3,
+        4,
+        9
+      ],
+      "ids": [
+        "sup-antecipacao-de-vendas-08",
+        "sup-antecipacao-de-vendas-07",
+        "sup-duvidas-12",
+        "sup-duvidas-113",
+        "sup-link-de-pagamento-12",
+        "sup-get-conta-09",
+        "prod-todas-maquininhas-08",
+        "sup-operacional-12",
+        "sup-get-conta-10",
+        "sup-taxas-04"
+      ]
+    },
+    {
+      "id": "heldout-H1-27",
+      "split": "heldout",
+      "message": "Qual o câmbio do euro hoje e quantas parcelas posso fazer no crediário?",
+      "relevant": [
+        1,
+        3
+      ],
+      "ids": [
+        "sup-crediario-03",
+        "prod-crediario-08",
+        "prod-crediario-02",
+        "sup-duvidas-89",
+        "sup-duvidas-53",
+        "sup-taxas-17",
+        "sup-antecipacao-de-vendas-08",
+        "sup-taxas-04",
+        "prod-get-classica-01",
+        "sup-link-de-pagamento-12"
+      ]
+    },
+    {
+      "id": "heldout-H1-28",
+      "split": "heldout",
+      "message": "Will it rain in São Paulo tomorrow, and what are the fees of the Get Smart?",
+      "relevant": [
+        1,
+        5
+      ],
+      "ids": [
+        "sup-get-smart-12",
+        "sup-get-smart-10",
+        "prod-get-smart-08",
+        "sup-get-smart-16",
+        "sup-taxas-19",
+        "prod-get-smart-07",
+        "sup-duvidas-01",
+        "prod-todas-maquininhas-07",
+        "prod-todas-maquininhas-08",
+        "sup-duvidas-28"
+      ]
+    },
+    {
+      "id": "heldout-H1-29",
+      "split": "heldout",
+      "message": "Quando cai o dinheiro das vendas de hoje? Aproveitando, o Link de Pagamento tem taxa?",
+      "relevant": [
+        1,
+        2,
+        3,
+        6,
+        9,
+        10
+      ],
+      "ids": [
+        "prod-link-de-pagamento-03",
+        "sup-link-de-pagamento-12",
+        "sup-link-de-pagamento-08",
+        "prod-link-de-pagamento-01",
+        "prod-taxas-01",
+        "sup-duvidas-49",
+        "prod-todas-maquininhas-08",
+        "prod-todas-maquininhas-03",
+        "sup-duvidas-102",
+        "sup-taxas-04"
+      ]
+    },
+    {
+      "id": "heldout-H1-30",
+      "split": "heldout",
+      "message": "Which of my terminals are online, and how do I get a Get Conta account?",
+      "relevant": [
+        5
+      ],
+      "ids": [
+        "sup-get-conta-06",
+        "sup-duvidas-90",
+        "sup-get-conta-02",
+        "sup-duvidas-89",
+        "prod-conta-digital-01",
+        "prod-crediario-08",
+        "sup-taxas-17",
+        "prod-get-smart-08",
+        "prod-todas-maquininhas-08",
+        "sup-operacional-12"
+      ]
+    },
+    {
+      "id": "heldout-H1-31",
+      "split": "heldout",
+      "message": "quanto está o dólar e a previsão do tempo no Rio?",
+      "relevant": [],
+      "ids": []
+    },
+    {
+      "id": "heldout-H2-23",
+      "split": "heldout",
+      "message": "Quais são as taxas do Link de Pagamento?",
+      "relevant": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "ids": [
+        "prod-link-de-pagamento-03",
+        "sup-link-de-pagamento-08",
+        "sup-link-de-pagamento-12",
+        "prod-link-de-pagamento-02",
+        "prod-taxas-01",
+        "sup-duvidas-49",
+        "sup-duvidas-102",
+        "prod-get-smart-02",
+        "prod-todas-maquininhas-03",
+        "sup-taxas-01"
+      ]
+    },
+    {
+      "id": "heldout-H2-24",
+      "split": "heldout",
+      "message": "Como funciona a Get Conta? Tem custo para abrir?",
+      "relevant": [
+        1,
+        2,
+        8
+      ],
+      "ids": [
+        "sup-get-conta-02",
+        "sup-get-conta-04",
+        "sup-duvidas-97",
+        "sup-duvidas-23",
+        "prod-get-smart-08",
+        "prod-todas-maquininhas-08",
+        "sup-pix-mais-respostas-29",
+        "prod-conta-digital-01",
+        "sup-pix-mais-respostas-09",
+        "sup-link-de-pagamento-12"
+      ]
+    },
+    {
+      "id": "heldout-H2-25",
+      "split": "heldout",
+      "message": "Does the Get Smart accept contactless payments and Pix by QR code?",
+      "relevant": [
+        1,
+        2,
+        3,
+        8
+      ],
+      "ids": [
+        "sup-get-smart-07",
+        "sup-duvidas-82",
+        "sup-get-smart-04",
+        "prod-get-smart-07",
+        "sup-duvidas-05",
+        "sup-pix-mais-respostas-18",
+        "prod-get-smart-08",
+        "prod-pix-01",
+        "sup-pix-mais-respostas-14",
+        "prod-pix-02"
+      ]
+    },
+    {
+      "id": "heldout-H2-26",
+      "split": "heldout",
+      "message": "posso receber pelo celular sem maquininha? tipo tap to pay",
+      "relevant": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "ids": [
+        "prod-get-tap-03",
+        "sup-duvidas-43",
+        "prod-get-tap-01",
+        "prod-todas-maquininhas-05",
+        "sup-duvidas-44",
+        "prod-todas-maquininhas-04",
+        "prod-get-smart-01",
+        "sup-configuracoes-maquininha-02",
+        "prod-get-classica-01",
+        "sup-configuracoes-maquininha-01"
+      ]
+    },
+    {
+      "id": "heldout-H2-27",
+      "split": "heldout",
+      "message": "What payment methods does the Payment Link support for my online store?",
+      "relevant": [
+        3,
+        5
+      ],
+      "ids": [
+        "sup-link-de-pagamento-09",
+        "sup-link-de-pagamento-12",
+        "prod-link-de-pagamento-01",
+        "prod-link-de-pagamento-04",
+        "prod-link-de-pagamento-02",
+        "sup-duvidas-51",
+        "sup-duvidas-97",
+        "sup-duvidas-50",
+        "prod-get-smart-05",
+        "prod-get-smart-08"
+      ]
+    },
+    {
+      "id": "heldout-H2-28",
+      "split": "heldout",
+      "message": "qual o prazo pra receber vendas no débito com a Getnet?",
+      "relevant": [
+        1,
+        3,
+        4
+      ],
+      "ids": [
+        "sup-antecipacao-de-vendas-13",
+        "sup-duvidas-37",
+        "sup-taxas-04",
+        "sup-duvidas-102",
+        "prod-crediario-02",
+        "sup-taxas-01",
+        "sup-antecipacao-de-vendas-10",
+        "prod-get-smart-02",
+        "sup-get-conta-09",
+        "prod-todas-maquininhas-03"
+      ]
+    },
+    {
+      "id": "heldout-H2-29",
+      "split": "heldout",
+      "message": "Qual a taxa exata de MDR para crédito em 7x em cartão corporativo Elo na Getnet?",
+      "relevant": [],
+      "ids": [
+        "sup-taxas-18",
+        "prod-todas-maquininhas-03",
+        "prod-crediario-03",
+        "sup-duvidas-99",
+        "prod-crediario-08",
+        "sup-duvidas-53",
+        "sup-taxas-17",
+        "prod-get-tap-02",
+        "prod-get-classica-01",
+        "sup-link-de-pagamento-08"
+      ]
+    },
+    {
+      "id": "heldout-H2-30",
+      "split": "heldout",
+      "message": "A Getnet tem integração nativa com o sistema Bling ERP versão 4.2?",
+      "relevant": [],
+      "ids": [
+        "prod-get-smart-07",
+        "sup-configuracoes-maquininha-02",
+        "prod-get-smart-08",
+        "sup-get-smart-08",
+        "sup-duvidas-16",
+        "sup-duvidas-47",
+        "prod-get-tap-01",
+        "sup-get-smart-16",
+        "prod-get-tap-06",
+        "prod-get-classica-01"
+      ]
+    },
+    {
+      "id": "heldout-H2-31",
+      "split": "heldout",
+      "message": "What is the phone number of the Getnet branch manager in Curitiba and his working hours?",
+      "relevant": [],
+      "ids": [
+        "sup-duvidas-18",
+        "sup-duvidas-48",
+        "prod-todas-maquininhas-04",
+        "sup-get-conta-08",
+        "prod-get-tap-06",
+        "prod-get-tap-01",
+        "prod-todas-maquininhas-03",
+        "prod-get-smart-01",
+        "sup-link-de-pagamento-05",
+        "prod-link-de-pagamento-01"
+      ]
+    },
+    {
+      "id": "heldout-H2-35",
+      "split": "heldout",
+      "message": "quanto vendi ontem e como funciona a antecipação de recebíveis?",
+      "relevant": [
+        1,
+        2,
+        10
+      ],
+      "ids": [
+        "sup-antecipacao-de-vendas-08",
+        "sup-duvidas-12",
+        "sup-antecipacao-de-vendas-07",
+        "sup-duvidas-26",
+        "sup-link-de-pagamento-12",
+        "prod-todas-maquininhas-08",
+        "sup-get-conta-09",
+        "sup-operacional-12",
+        "prod-crediario-01",
+        "sup-get-conta-10"
+      ]
+    },
+    {
+      "id": "heldout-H2-36",
+      "split": "heldout",
+      "message": "What's the euro rate today, and can I send a Payment Link by SMS?",
+      "relevant": [
+        3
+      ],
+      "ids": [
+        "prod-link-de-pagamento-03",
+        "sup-link-de-pagamento-08",
+        "sup-link-de-pagamento-12",
+        "prod-link-de-pagamento-02",
+        "sup-duvidas-97",
+        "sup-duvidas-49",
+        "prod-get-smart-02",
+        "prod-taxas-01",
+        "prod-todas-maquininhas-03",
+        "prod-todas-maquininhas-04"
+      ]
+    },
+    {
+      "id": "heldout-H2-37",
+      "split": "heldout",
+      "message": "vai chover em Porto Alegre amanhã? e minha maquininha T1988A tá online?",
+      "relevant": [],
+      "ids": []
+    },
+    {
+      "id": "heldout-H3-01",
+      "split": "heldout",
+      "message": "Qual é a melhor maquininha para um MEI?",
+      "relevant": [
+        3
+      ],
+      "ids": [
+        "prod-get-smart-05",
+        "prod-get-smart-06",
+        "prod-get-classica-01",
+        "prod-todas-maquininhas-04",
+        "prod-todas-maquininhas-08",
+        "sup-duvidas-94",
+        "sup-operacional-12",
+        "sup-configuracoes-maquininha-01",
+        "prod-get-classica-02",
+        "sup-operacional-06"
+      ]
+    },
+    {
+      "id": "heldout-H3-08",
+      "split": "heldout",
+      "message": "Como fazer recebimento de pix com a maquininha? Quando este valor será creditado na minha conta?",
+      "relevant": [
+        4,
+        5,
+        6
+      ],
+      "ids": [
+        "sup-pix-mais-respostas-24",
+        "sup-pix-mais-respostas-18",
+        "prod-todas-maquininhas-02",
+        "prod-pix-01",
+        "sup-duvidas-57",
+        "sup-duvidas-82",
+        "sup-link-de-pagamento-10",
+        "prod-get-smart-08",
+        "sup-get-conta-02",
+        "sup-get-conta-15"
+      ]
+    },
+    {
+      "id": "heldout-H3-11",
+      "split": "heldout",
+      "message": "Tenho duas maquininhas, alguma delas está com erro? A conexão com internet estava estável?",
+      "relevant": [
+        1,
+        3,
+        6,
+        10
+      ],
+      "ids": [
+        "sup-erro-adq-1-84-01",
+        "sup-configuracoes-maquininha-02",
+        "sup-duvidas-05",
+        "prod-todas-maquininhas-08",
+        "sup-configurar-wi-fi-04",
+        "sup-erro-adq-1-19-01",
+        "sup-operacional-01",
+        "sup-duvidas-86",
+        "prod-todas-maquininhas-04",
+        "sup-configurar-wi-fi-03"
+      ]
+    },
+    {
+      "id": "heldout-H3-12",
+      "split": "heldout",
+      "message": "Há possibilidade de parcelamento no crédito?",
+      "relevant": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        8,
+        9
+      ],
+      "ids": [
+        "sup-parcelado-01",
+        "prod-crediario-03",
+        "sup-duvidas-76",
+        "prod-crediario-01",
+        "sup-duvidas-85",
+        "sup-crediario-03",
+        "sup-antecipacao-de-vendas-08",
+        "sup-taxas-04",
+        "sup-taxas-12",
+        "sup-antecipacao-de-vendas-07"
+      ]
+    },
+    {
+      "id": "heldout-H3-16",
+      "split": "heldout",
+      "message": "Posso conectar minha maquininha no Wi-Fi?",
+      "relevant": [
+        1,
+        2,
+        3,
+        9
+      ],
+      "ids": [
+        "sup-configurar-wi-fi-01",
+        "sup-configurar-wi-fi-03",
+        "prod-get-smart-06",
+        "prod-get-smart-03",
+        "sup-duvidas-05",
+        "sup-configuracoes-maquininha-01",
+        "prod-todas-maquininhas-04",
+        "prod-todas-maquininhas-02",
+        "prod-get-classica-01",
+        "sup-duvidas-94"
+      ]
+    },
+    {
+      "id": "heldout-H3-17",
+      "split": "heldout",
+      "message": "Quais os diferentes tipos de maquininha da getnet?",
+      "relevant": [
+        1,
+        3,
+        4,
+        6,
+        7,
+        9
+      ],
+      "ids": [
+        "prod-get-smart-06",
+        "sup-duvidas-94",
+        "prod-get-classica-01",
+        "prod-todas-maquininhas-08",
+        "prod-todas-maquininhas-04",
+        "prod-get-smart-05",
+        "prod-get-tap-06",
+        "sup-configuracoes-maquininha-01",
+        "sup-duvidas-11",
+        "sup-operacional-12"
+      ]
+    },
+    {
+      "id": "heldout-H3-20",
+      "split": "heldout",
+      "message": "Como antecipo as minhas vendas?",
+      "relevant": [
+        2,
+        3
+      ],
+      "ids": [
+        "sup-duvidas-12",
+        "sup-duvidas-15",
+        "sup-antecipacao-de-vendas-14",
+        "sup-antecipacao-de-vendas-17",
+        "sup-get-conta-09",
+        "sup-link-de-pagamento-12",
+        "sup-operacional-12",
+        "sup-operacional-10",
+        "prod-crediario-01",
+        "sup-get-conta-10"
+      ]
+    }
+  ]
+}
